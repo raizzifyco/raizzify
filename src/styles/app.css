@@ -1,0 +1,85 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes reverseMarquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.marquee {
+  display: flex;
+  gap: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-content {
+  animation: marquee 20s linear infinite;
+}
+.marquee-content-second {
+  animation: reverseMarquee 20s linear infinite;
+}
+
+.marquee-content > div {
+  flex: 0 0 auto;
+}
+
+.gradient-left,
+.gradient-right {
+  position: absolute;
+  top: 19.5%;
+  height: 54%;
+  width: 10%;
+  pointer-events: none;
+  backdrop-filter: blur(1x);
+}
+
+.gradient-right {
+  right: 0;
+  backdrop-filter: blur(1px);
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.8));
+}
+
+.gradient-left {
+  left: 0;
+  backdrop-filter: blur(1px);
+  background: linear-gradient(to left, transparent, rgba(255, 255, 255, 0.8));
+}
+
+.toggle-gradient {
+  background: linear-gradient(90deg, #45e555, #4dcedd);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+
+.main-grad {
+  background: linear-gradient(90deg, #45e555, #4dcedd, #539ef3);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
+.img-blur {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.8),
+    #f6f9fc
+  );
+}
+
+/* In your styles/globals.css or a similar global CSS file */
+.card-blur {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
