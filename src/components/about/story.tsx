@@ -1,19 +1,19 @@
 import { Button } from "../ui/button"
-import story1 from '../../../public/images/story1.jpeg'
-import story2 from '../../../public/images/story2.jpeg'
-import story3 from '../../../public/images/story3.jpeg'
-import story4 from '../../../public/images/story4.jpeg'
-import story5 from '../../../public/images/story5.jpeg'
+import story1 from '../../../public/images/about/story1.jpeg'
+import story2 from '../../../public/images/about/story2.jpeg'
+import story3 from '../../../public/images/about/story3.jpeg'
+import story4 from '../../../public/images/about/story4.jpeg'
+import story5 from '../../../public/images/about/story5.jpeg'
 import Image from "next/image"
 const Story = () => {
     return (
-        <div id="our-story" className="bg-cardBgColor w-full flex items-center justify-center h-screen my-10 relative">
+        <div id="our-story" className="bg-cardBgColor w-full flex items-center justify-center h-screen my-10 relative px-4">
             <div className="max-w-screen-md h-full flex items-center justify-center">
                 <div className="flex text-center flex-col items-center gap-y-2">
                     <Button className="rounded-3xl px-10">
                         Our Story
                     </Button>
-                    <h1 className="text-[56px] font-semibold">Heading</h1>
+                    <h1 className="sm:text-[40px] text-[32px] leading-tight font-semibold">A Team Backed By IITians & ISBians</h1>
                     <p className="text-muted-foreground">At Raizzify, we revolutionise salon booking by making it seamless and stress-free. Born from the idea to simplify scheduling, our app connects clients with top-rated salons and skilled stylists through an easy-to-use interface. By offering real-time availability, personalised profiles, and secure payments, we support both clients and local businesses.
                     </p>
                     <p className="text-muted-foreground mt-4">Our commitment to enhancing the beauty experience ensures that self-care is just a tap away. Join us and discover the future of salon booking, where beauty meets convenience.

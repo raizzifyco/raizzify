@@ -1,27 +1,27 @@
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
 import gsap from 'gsap'
-import shahrukhImg from '../../../public/images/Shahrukh.png'
-import abhishekImg from '../../../public/images/Abhishek.png'
-import shwetaImg from '../../../public/images/Shweta.png'
+import shahrukhImg from '../../../public/images/testimonials/Shahrukh.png'
+import abhishekImg from '../../../public/images/testimonials/Abhishek.png'
+import shwetaImg from '../../../public/images/testimonials/Shweta.png'
 import TestimonialCard from "./testimonial-card";
 
 const testimonials = [
     {
         imageUrl: abhishekImg, // Replace with the actual path or import
-        name: "Mr.Abhishek",
+        name: "Mr. Abhishek",
         designation: "TRP Salon",
         review: "We just got Raizzify for our salon and we love it! It's easy to use for bookings and setting up services. We're excited that it might help us sell more products too. Can't wait to see how it grows our business!"
     },
     {
         imageUrl: shwetaImg, // Replace with the actual path or import
-        name: "Ms.Shweta",
+        name: "Ms. Shweta",
         designation: "Reflection Salon",
         review: "Our salon is pretty new, and we wanted something to help us stand out. Raizzify looks perfect for us! It's easy for appointments and lets customers buy our products too. We think this will really help our business grow!"
     },
     {
         imageUrl: shahrukhImg, // Replace with the actual path or import
-        name: "Mr.Shahrukh",
+        name: "Mr. Shahrukh",
         designation: "Clippers Cutters",
         review: "We just started Raizzify for our salon. It's easy to use, even for us who aren't great with computers. We love how it handles bookings and also let us sell our products on the app. Can't wait to see how our customers like it!"
     }

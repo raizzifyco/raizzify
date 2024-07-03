@@ -2,13 +2,13 @@
 import AboutHero from "@/components/about/about-hero";
 import Careers from "@/components/about/careers";
 import Story from "@/components/about/story";
-import Team from "@/components/about/team";
+// import Team from "@/components/about/team";
 import Values from "@/components/about/values";
 import UserDownload from "@/components/users/user-download"
 import "../../styles/app.css"
 const AboutPage = () => {
     return (
-        <div className="">
+        <div className="overflow-x-hidden">
             <AboutHero />
             <Story />
             {/* <Team /> */}

@@ -1,8 +1,8 @@
-import expImg1 from '../../../public/images/expimg1.jpeg'
-import expImg2 from '../../../public/images/expimg2.jpeg'
-import expImg3 from '../../../public/images/expimg3.jpeg'
-import expImg4 from '../../../public/images/expimg4.jpeg'
-import expImg5 from '../../../public/images/expimg5.jpeg'
+import expImg1 from '../../../public/images/user/experience/expimg1.jpeg'
+import expImg2 from '../../../public/images/user/experience/expimg2.jpeg'
+import expImg3 from '../../../public/images/user/experience/expimg3.jpeg'
+import expImg4 from '../../../public/images/user/experience/expimg4.jpeg'
+import expImg5 from '../../../public/images/user/experience/expimg5.jpeg'
 import ExperienceCard from './experience-card'
 
 const cardData = [

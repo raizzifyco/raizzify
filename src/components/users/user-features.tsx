@@ -1,15 +1,14 @@
-import hassleFree from '../../../public/images/hassle-free.png';
-import aiFeatures from '../../../public/images/ai-features.png';
-import connected from '../../../public/images/connected.png';
-import cashVouchers from '../../../public/images/cash-vouchers.png';
-import confidentiality from '../../../public/images/confidentiality.png';
+import hassleFree from '../../../public/images/user/features/hassle-free.png';
+import aiFeatures from '../../../public/images/user/features/ai-features.png';
+import connected from '../../../public/images/user/features/connected.png';
+import cashVouchers from '../../../public/images/user/features/cash-vouchers.png';
+import confidentiality from '../../../public/images/user/features/confidentiality.png';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { cn } from '@/lib/utils';
 import '../../styles/app.css'
-gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from '@gsap/react';
 
 const leftItems = [
     "Hassle-Free",
@@ -55,7 +54,7 @@ const rightItems = [
 const UserFeatures = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
-    useEffect(() => {
+    useGSAP(() => {
         // Pin the left side
         ScrollTrigger.create({
             trigger: ".features-trigger",
@@ -84,7 +83,7 @@ const UserFeatures = () => {
         <div className="px-4 sm:px-6 md:px-8 z-[100] lg:px-32 py-16">
             <div className="text-center">
                 <h1 className="font-medium md:text-[56px] text-[32px]">Key Features</h1>
-                <p className='text-base break-words'>Explore our curated lists and stay tuned with the <br />
+                <p className='text-base'>Explore our curated lists and stay tuned with the <br className='sm:block hidden' />
                     latest programming news from all over the world.</p>
             </div>
 

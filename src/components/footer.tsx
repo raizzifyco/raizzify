@@ -1,6 +1,5 @@
 
 import Link from "next/link"
-import Download from "./owners/download"
 const Footer = () => {
     return (
         <div className="bg-footerBgColor md:pt-20 sm:pt-10 pt-8 pb-6 lg:px-14 px-4 sm:px-6 md:px-8 flex items-center justify-center">

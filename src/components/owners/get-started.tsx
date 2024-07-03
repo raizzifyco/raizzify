@@ -1,9 +1,9 @@
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
 import gsap from "gsap"
-import img1 from '../../../public/images/start-img1.png'
-import img2 from '../../../public/images/start-img2.png'
-import img3 from '../../../public/images/start-img3.png'
+import img1 from '../../../public/images/owners/benefits/start-img1.png'
+import img2 from '../../../public/images/owners/benefits/start-img2.png'
+import img3 from '../../../public/images/owners/benefits/start-img3.png'
 import StartedCard from "./started-card"
 
 const cardData = [
@@ -54,6 +54,7 @@ const GetStarted = () => {
             top: "-130%"
         }, "a")
     })
+    
     return (
         <>
             <div className="md:flex hidden flex-col h-[220vh] relative py-10 px-14 mt-32">

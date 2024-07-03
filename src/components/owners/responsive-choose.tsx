@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { gsap } from "gsap";
-import scrollImg1 from '../../../public/images/scroll-img1.png'
-import scrollImg2 from '../../../public/images/scroll-img2.png';
-import scrollImg3 from '../../../public/images/scroll-img3.png';
+import scrollImg1 from '../../../public/images/owners/choose/scroll-img1.png'
+import scrollImg2 from '../../../public/images/owners/choose/scroll-img2.png';
+import scrollImg3 from '../../../public/images/owners/choose/scroll-img3.png';
 import { Button } from "../ui/button";
 import Image from 'next/image'
 const ResponsiveChoose = () => {

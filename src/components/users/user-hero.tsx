@@ -1,11 +1,24 @@
 import Switch from "../switch"
 import '../../styles/app.css'
 import { Button } from "../ui/button"
-import img from '../../../public/images/customers-hero-device.png'
+import img from '../../../public/images/user/user-hero.png'
 import Image from "next/image"
+import { useGSAP } from "@gsap/react"
+import gsap from '@/lib/gsap-setup'
+
 const UserHero = () => {
+
+    useGSAP(() => {
+        gsap.from(".hero", {
+            xPercent: -100
+        })
+    })
+
+    const handleGetStarted = () => {
+        gsap.to(window, { duration: 1, scrollTo: `#faqs` });
+    }
     return (
-        <div className="flex flex-col justify-center items-center py-10 px-4">
+        <div className="flex hero flex-col justify-center items-center py-10 px-4">
             <Switch />
 
             <div className="mt-10 relative w-full">
@@ -16,11 +29,14 @@ const UserHero = () => {
             </div>
 
             <div className="flex flex-col items-center text-center text-muted-foreground mt-10">
-                <p>Shorten your salon wait times, get a glimpse on how you would look after </p>
-                <p>a haircut and even earn vouchers while you’re doing so.</p>
+                <p className="md:block hidden">Shorten your salon wait times, get a glimpse on how you would look after </p>
+                <p className="md:block hidden">a haircut and even earn vouchers while you’re doing so.</p>
 
+                <p className="md:hidden block">
+                    Shorten your salon wait times, get a glimpse on how you would look after a haircut and even earn vouchers while you’re doing so.
+                </p>
                 <div className="flex items-center sm:flex-row flex-col gap-6 mt-8">
-                    <Button variant={'default'} className="sm:w-[200px] w-[300px] py-6 font-semibold">
+                    <Button onClick={handleGetStarted} variant={'default'} className="sm:w-[200px] w-[300px] py-6 font-semibold">
                         Get Started
                     </Button>
                     <Button variant={'outline'} className="sm:w-[200px] w-[300px] py-6 font-semibold">

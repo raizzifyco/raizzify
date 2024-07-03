@@ -15,7 +15,7 @@ const StartedCard = ({ imageUrl, title, description, heading }: StartedCardProps
                         <p className="text-primary font-medium">{heading}</p>
                     </div>
                 </div>
-                <h2 className="font-semibold text-2xl">{title}</h2>
+                <h2 className="font-semibold md:text-3xl sm:text-2xl text-xl">{title}</h2>
                 <p className="text-muted-foreground">{description}</p>
             </div>
             <div className="md:w-1/2 md:mt-0  mt-6 w-full h-full flex items-center justify-center overflow-hidden relative">

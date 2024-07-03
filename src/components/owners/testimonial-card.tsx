@@ -10,9 +10,7 @@ const TestimonialCard = ({ imageUrl, name, designation, review }: TestimonialPro
     return (
         <div className="flex flex-col gap-y-3">
             <div className="flex items-center gap-x-2">
-                <div className="w-24 h-24 rounded-full relative">
-                    <Image src={imageUrl} layout="fill" objectFit="contain" className="rounded-full" alt="" />
-                </div>
+                    <Image src={imageUrl} className="rounded-full w-24 h-24 object-contain" alt="" />
                 <div className="flex flex-col">
                     <h2 className="font-semibold text-primaryTextColor">{name}</h2>
                     <p className="text-primaryTextColor font-light text-sm">{designation}</p>

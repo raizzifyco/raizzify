@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import about from '../../../public/images/about.jpeg'
+import about from '../../../public/images/about/about.jpeg'
 import { Button } from '../ui/button'
 const AboutHero = () => {
     return (

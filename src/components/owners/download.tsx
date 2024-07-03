@@ -1,6 +1,6 @@
 import Image from "next/image"
-import downloadImg from '../../../public/images/footer-phone.png'
-import footerLogo from '../../../public/images/footer-logo.png'
+import downloadImg from '../../../public/images/owners/owner-download.png'
+import footerLogo from '../../../public/images/logo.png'
 import { Button } from "../ui/button";
 import { ArrowUpRightIcon } from "lucide-react";
 import { useState } from "react";

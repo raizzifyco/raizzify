@@ -40,13 +40,13 @@ const valueData = [
 ]
 const Values = () => {
     return (
-        <div id="how-we-work" className="bg-cardBgColor py-10 my-10 mt-20 px-16">
+        <div id="how-we-work" className="bg-cardBgColor py-10 my-10 mt-20 md:px-16 sm:px-8 px-4">
             <div className="flex flex-col items-center gap-y-4">
                 <Button className="rounded-3xl px-10">
                     Our Values
                 </Button>
                 <h2 className="sm:text-[40px] text-[32px] text-center font-semibold text-primaryTextColor">How we work at Raizzify</h2>
-                <p className="text-muted-foreground w-1/2 text-center">Our shared values keep us connected and guide us as one team.</p>
+                <p className="text-muted-foreground sm:w-1/2 text-center">Our shared values keep us connected and guide us as one team.</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-12 mt-14">

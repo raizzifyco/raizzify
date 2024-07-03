@@ -76,7 +76,7 @@ const Faq = () => {
             <p className="text-muted-foreground text-center mt-2">Everything you need to know about the product and billing.</p>
 
             <div className="md:w-1/2 w-full mt-10">
-                <Accordion type="single" collapsible>
+                <Accordion type="single" collapsible >
                     {faqs.map((faq, index) => (
                         <AccordionItem key={index} value={`item-${index + 1}`}>
                             <AccordionTrigger className='font-semibold text-base text-left'>{faq.title}</AccordionTrigger>
