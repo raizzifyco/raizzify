@@ -20,9 +20,9 @@ export default function Home() {
       <section id="benefits">
         <GetStarted />
       </section>
-      <section id="pricing">
+      {/* <section id="pricing">
         <Pricing />
-      </section>
+      </section> */}
       <section id="testimonials">
         <Testimonials />
       </section>

@@ -16,7 +16,7 @@ const Switch = () => {
     }
 
     useEffect(() => {
-        pathname === "/customer/" ? toggle(true) : toggle(false)
+        pathname === "/customer" ? toggle(true) : toggle(false)
     }, [pathname])
 
     return (
