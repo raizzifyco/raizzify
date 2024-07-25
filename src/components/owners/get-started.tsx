@@ -7,13 +7,13 @@ import img3 from '../../../public/images/owners/benefits/start-img3.png'
 import StartedCard from "./started-card"
 
 const cardData = [
-    {
-        imageUrl: img3,
-        heading: "Coins",
-        title: "Help Your Customers Earn Cash Benefits",
-        description: "For each service taken by the customer at your salon through the app, we provide them vouchers which they can redeem with local partners.",
-        top: "top-28"
-    },
+    // {
+    //     imageUrl: img3,
+    //     heading: "Coins",
+    //     title: "Help Your Customers Earn Cash Benefits",
+    //     description: "For each service taken by the customer at your salon through the app, we provide them vouchers which they can redeem with local partners.",
+    //     top: "top-28"
+    // },
     {
         imageUrl: img2,
         heading: "Experience",
