@@ -12,7 +12,7 @@ const Switch = () => {
 
 
     const handleToggleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        // pathname === "/" ? router.push("/customer") : router.push("/")
+        pathname === "/" ? router.push("/customer") : router.push("/")
     }
 
     useEffect(() => {
