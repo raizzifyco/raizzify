@@ -30,7 +30,7 @@ const Footer = () => {
                                     <Link href={"/privacy-policy"}>Privacy Policy</Link>
                                     <Link href={"/refund-cancellation"}>Refund Policy</Link>
                                     <Link href={"/terms-service"}>Terms of services</Link>
-                                    <Link href={"/contact-us"}>Cantact Us</Link>
+                                    <Link href={"/contact-us"}>Contact Us</Link>
                                 </div>
                             </div>
                         </div>
