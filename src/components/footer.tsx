@@ -29,7 +29,7 @@ const Footer = () => {
                                 <div className="flex flex-col gap-y-2 text-white font-light mt-4">
                                     <Link href={"/privacy-policy"}>Privacy Policy</Link>
                                     <Link href={"/terms-service"}>Terms of services</Link>
-                                    <p>Support</p>
+                                    <Link href={"/contact-us"}>Cantact Us</Link>
                                 </div>
                             </div>
                         </div>
