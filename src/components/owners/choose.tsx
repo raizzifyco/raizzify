@@ -1,5 +1,5 @@
 import scrollImg1 from '../../../public/images/owners/choose/scroll-img1.png'
-import scrollImg2 from '../../../public/images/owners/choose/scroll-img2.png'
+import scrollImg2 from '../../../public/images/user/user-download.png'
 import scrollImg3 from '../../../public/images/owners/choose/scroll-img3.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from "@gsap/react"

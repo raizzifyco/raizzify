@@ -6,11 +6,11 @@ import expImg5 from '../../../public/images/user/experience/expimg5.jpeg'
 import ExperienceCard from './experience-card'
 
 const cardData = [
-    { imgSrc: expImg1, title: "Appointments Made Simple", description: "Book, reschedule, or cancel appointments anytime." },
-    { imgSrc: expImg2, title: "Appointments Made Simple", description: "Book, reschedule, or cancel appointments anytime." },
+    { imgSrc: expImg2, title: "Your Salon Oasis awaits", description: "Escape the everyday and indulge in self-care." },
+    { imgSrc: expImg1, title: "Meet Your Dream Stylist", description: "Browse stylist profiles, view portfolios, and book appointments ." },
     { imgSrc: expImg3, title: "Appointments Made Simple", description: "Book, reschedule, or cancel appointments anytime." },
-    { imgSrc: expImg4, title: "Appointments Made Simple", description: "Book, reschedule, or cancel appointments anytime." },
-    { imgSrc: expImg5, title: "Appointments Made Simple", description: "Book, reschedule, or cancel appointments anytime." },
+    { imgSrc: expImg4, title: "Manage Your Hair Routine", description: "Take control of your hair care regimen." },
+    { imgSrc: expImg5, title: "Stylist Expertise", description: "Expert stylists for all your needs." },
 ];
 const Experience = () => {
     return (

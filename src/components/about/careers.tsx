@@ -1,10 +1,10 @@
 import { ArrowUpRight } from "lucide-react"
 import { Button } from "../ui/button"
 import career1 from '../../../public/images/about/career1.jpeg'
-import career2 from '../../../public/images/about/career2.jpeg'
-import career3 from '../../../public/images/about/career3.jpeg'
-import career4 from '../../../public/images/about/career4.jpeg'
-import career5 from '../../../public/images/about/career5.jpeg'
+import career2 from '../../../public/images/about/career2.png'
+import career3 from '../../../public/images/about/career3.png'
+import career4 from '../../../public/images/about/career4.png'
+import career5 from '../../../public/images/about/career5.png'
 import Image from "next/image"
 
 const Careers = () => {
@@ -27,7 +27,7 @@ const Careers = () => {
                 </div>
                 <div className="flex flex-col items-center gap-y-4">
                     <div className="flex items-end gap-x-4">
-                        <Image src={career1} alt="" className="xs:w-[160px] w-1/2 h-[160px] xs:object-contain object-cover"/>
+                        <Image src={career1} alt="" className="xs:w-[160px] w-1/2 h-[160px] object-cover"/>
                         <Image src={career2} alt="" className="xs:w-[160px] w-1/2 h-[240px] object-cover" />
                     </div>
                     <div className="flex items-start gap-x-4">

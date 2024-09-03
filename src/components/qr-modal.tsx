@@ -17,7 +17,7 @@ const QrModal = ({ title, open, setOpen }: QrModalProps) => {
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogContent className="max-w-[400px] overflow-hidden">
+            <DialogContent className="max-w-[400px] overflow-hidden font-manrope">
                 <DialogHeader className="py-4">
                     <DialogTitle className="text-center">Scan QR Code</DialogTitle>
                     <DialogDescription>

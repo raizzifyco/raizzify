@@ -6,7 +6,7 @@ interface ToggleState {
 }
 export const useToggle = create<ToggleState>((set) => {
     return {
-        isToggled: false,
+        isToggled: true,
         toggle: (val) => {
             set({ isToggled: val })
         }

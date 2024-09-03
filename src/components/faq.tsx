@@ -10,7 +10,8 @@ import pic1 from '../../public/images/pic1.png'
 import pic2 from '../../public/images/pic2.png'
 import pic3 from '../../public/images/pic3.png'
 import Image from 'next/image';
-import { useToggle } from '@/state/toggle-state';
+import { useToggle } from '@/styles/state/toggle-state';
+
 const customerFaqs = [
     {
         title: "How do I join the platform?",
@@ -86,7 +87,7 @@ const Faq = () => {
                 </Accordion>
             </div>
 
-            <div className='my-10 w-full gap-y-2 bg-cardBgColor rounded-lg p-6 flex flex-col items-center'>
+            <div className='my-10 w-full gap-y-2 bg-[#F7FEFF] rounded-lg p-6 flex flex-col items-center'>
 
                 <div className='relative h-14 w-28'>
                     <Image src={pic1} width={50} height={50} alt='' className='absolute right-14' />

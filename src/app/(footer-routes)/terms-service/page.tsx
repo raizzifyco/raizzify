@@ -4,7 +4,7 @@ import { copyRight, disclaimers, governingLaw, idemnification, noticesInfrigemen
 const TermsService = () => {
   const date = new Date();
   return (
-    <div className="flex items-center justify-center min-h-screen py-14">
+    <div className="flex items-center justify-center min-h-screen py-14 font-manrope">
       <div className="flex max-w-screen-sm flex-col gap-y-4">
         <p className="text-sm font-light">Last Updated on {date.getDate()}</p>
         <h1 className="text-4xl font-semibold text-primaryTextColor">Terms of use</h1>

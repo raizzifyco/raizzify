@@ -23,6 +23,11 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        "space-grotesk": "var(--font-space-grotesk)",
+        "manrope": "var(--font-manrope)",
+        "cabin": "var(--font-cabin)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -31,7 +36,7 @@ const config = {
         foreground: "hsl(var(--foreground))",
         cardBgColor: "#F6F9FC",
         lightBorderColor: "#F6F6F6",
-        footerBgColor: "#1C1C1C",
+        footerBgColor: "#161616",
         primaryBorderColor: "#BEF5FF",
         primaryTextColor: "#202020",
         borderGradient1: "#00A210",

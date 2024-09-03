@@ -1,14 +1,12 @@
-"use client"
-import Faq from "@/components/faq"
-import CustomerSay from "@/components/users/customer-say"
-import Experience from "@/components/users/experience"
-import DownloadComp from "@/components/users/user-download"
-import UserDownload from "@/components/users/user-download"
-import UserFeatures from "@/components/users/user-features"
-import UserHero from "@/components/users/user-hero"
 import { userTestimonials } from "@/lib/testimonials-data"
+import Experience from "./users/experience"
+import UserFeatures from "./users/user-features"
+import UserHero from "./users/user-hero"
+import CustomerSay from "./users/customer-say"
+import DownloadComp from "./users/user-download"
+import Faq from "./faq"
 
-const CustomerPage = () => {
+const UserSection = () => {
     return (
         <div className="font-manrope">
             <section id="user-hero">
@@ -29,7 +27,6 @@ const CustomerPage = () => {
             <section id="user-download">
                 <DownloadComp gradientTitle="RAIZZIFY" />
             </section>
-        </div>
-    )
+        </div>)
 }
-export default CustomerPage
+export default UserSection

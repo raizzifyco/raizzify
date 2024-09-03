@@ -85,19 +85,20 @@ const Hero = () => {
         gsap.to(window, { duration: 0.5, scrollTo: { y: 400 } })
     }
     const handleGetStarted = () => {
-        gsap.to(window, { duration: 1, scrollTo: `#faqs` });
+        gsap.to(window, { duration: 1, scrollTo: `#download` });
     }
     return (
         <div className="flex hero flex-col justify-center items-center py-10">
             <Switch />
-            <div className="flex flex-col items-center whitespace-nowrap w-full gap-y-8">
-                <div className="font-bold lg:text-[56px] sm:text-[38px] xs:text-[30px] text-[26px] md:px-0 px-6 md:w-3/4 w-full text-center md:leading-relaxed">
-                    <h1 className="text-center tracking-tight">The all-in-one platform</h1>
+            <div className="flex flex-col items-center  w-full gap-y-8">
+                <div className="font-bold lg:text-[56px] whitespace-nowrap sm:text-[38px] xs:text-[30px] text-[26px] md:px-0 px-6 md:w-3/4 w-full text-center md:leading-relaxed">
+                    <h1 className="text-center tracking-tight">The all-in-one</h1>
                     <p className="text-center sm:block flex items-center flex-col tracking-tight">
-                        purpose-built for
+                        platform for
                         <span className="bg-primary px-2 rounded-md text-white ml-4 leading-tight sm:inline-block block w-fit">Salon Owners</span>
                     </p>
                 </div>
+                <p className='text-secondaryTextColor lg:px-14 md:px-8 px-4 text-center lg:text-xl md:text-lg text-sm font-normal'>Digitalize your salon, Maximize Revenue Insights, My Customers, My Bookings, My Team, Discounts</p>
                 <div className="sm:flex hidden items-center gap-x-6">
                     <Button onClick={handleGetStarted} variant={'default'} className="w-[200px] py-6 font-semibold">
                         Get Started

@@ -91,7 +91,7 @@ const UserFeatures = () => {
                 <div className="left sm:w-[32%] py-16 sm:flex hidden flex-col gap-y-4">
                     {leftItems.map((item, i) => (
                         <div key={i} className='flex items-center gap-x-2'>
-                            <div className={cn(`w-2 h-2 rounded-full`,activeIndex === i && "bg-primary")}>
+                            <div className={cn(`w-2 h-2 rounded-full`, activeIndex === i && "bg-primary")}>
 
                             </div>
                             <p className={`left-${i} ${activeIndex === i ? 'text-primaryTextColor' : 'text-muted-foreground'}`} key={i}>
@@ -108,9 +108,12 @@ const UserFeatures = () => {
                                 <Image src={item.image} className='sm:absolute xl:top-0 bottom-0 left-20 right-20 lg:-translate-x-0 sm:-translate-x-10 w-[80%]' alt='' />
                                 <div className='img-blur absolute bottom-0 h-10 w-full'></div>
                             </div>
-                            <div className='xl:w-1/2 lg:w-[80%] gap-y-2 flex flex-col'>
-                                <h3 className='font-bold text-xl text-primaryTextColor'>{item.title}</h3>
-                                <p className='font-light text-muted-foreground text-sm'>{item.subtitle}</p>
+                            <div className='flex items-start justify-between'>
+                                <div className='xl:w-1/2 lg:w-[80%] gap-y-2 flex flex-col'>
+                                    <h3 className='font-bold text-xl text-primaryTextColor'>{item.title}</h3>
+                                    <p className='font-light text-muted-foreground text-sm'>{item.subtitle}</p>
+                                </div>
+                                <p className='text-muted-foreground'>*T&C applied</p>
                             </div>
                         </div>
                     ))}

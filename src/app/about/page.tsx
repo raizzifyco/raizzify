@@ -6,15 +6,16 @@ import Story from "@/components/about/story";
 import Values from "@/components/about/values";
 import UserDownload from "@/components/users/user-download"
 import "../../styles/app.css"
+import DownloadComp from "@/components/users/user-download";
 const AboutPage = () => {
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden font-manrope">
             <AboutHero />
             <Story />
             {/* <Team /> */}
             <Values />
             <Careers />
-            <UserDownload />
+            <DownloadComp gradientTitle="RAIZZIFY" />
         </div>
     )
 }

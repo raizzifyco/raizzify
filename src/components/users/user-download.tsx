@@ -6,26 +6,30 @@ import QrModal from '../qr-modal';
 import { useState } from 'react';
 import playStore from '../../../public/images/playstore.png'
 import apple from '../../../public/images/apple.png'
-const UserDownload = () => {
+import bg from '../../../public/images/user/user-download-bg.png'
+
+interface DownloadCompProps {
+  gradientTitle: string;
+}
+const DownloadComp = ({ gradientTitle }: DownloadCompProps) => {
 
   const [android, setAndroidOpen] = useState<boolean>(false)
   const [ios, setIosOpen] = useState<boolean>(false)
 
   return (
     <div>
-
-      <div className="bg-primaryTextColor flex items-center justify-center py-16 pb-40 px-4">
+      <div className="download-bg flex items-center justify-center py-10 pb-60 px-4">
         <div className="flex flex-col gap-y-6">
-          <h1 className="sm:text-[64px] xs:text-[48px] text-[40px] text-white font-semibold text-center">Start Using <span className="toggle-gradient">Raizzify</span> Now</h1>
+          <h1 className="sm:text-[64px] xs:text-[48px] text-[40px] text-white font-medium text-center font-cabin">Start Using <span className="text-primary font-space-grotesk">{gradientTitle}</span> Now</h1>
           <p className="text-tertiaryColor font-light text-center"> Download our app now to enjoy a seamless and <br />
             personalised salon experience.</p>
 
           <div className="md:flex justify-center hidden sm:flex-row flex-col items-center gap-4 mt-6">
-            <Button onClick={() => setAndroidOpen(true)} className="bg-primaryTextColor px-6 py-7 border border-primary w-[240px]">
+            <Button onClick={() => setAndroidOpen(true)} className="bg-transparent px-6 py-7 border border-primary w-[240px]">
               <p>Download for Android</p>
               <ArrowUpRightIcon size={20} className="ml-2" />
             </Button>
-            <Button onClick={() => setIosOpen(true)} className="bg-primaryTextColor px-6 py-7 border border-primary w-[240px]">
+            <Button onClick={() => setIosOpen(true)} className="bg-transparent px-6 py-7 border border-primary w-[240px]">
               <p>Download for iOS</p>
               <ArrowUpRightIcon size={20} className="ml-2" />
             </Button>
@@ -50,8 +54,8 @@ const UserDownload = () => {
         </div>
       </div>
 
-      <div className='bg-white xs:min-h-[75vh] h-[60vh] relative'>
-        <Image src={footerDevice} className='absolute -top-40 left-1/2 -translate-x-[40%] xs:max-w-[400px] max-w-[280px]' alt='' />
+      <div className='bg-white xs:min-h-[60vh] h-[50vh] relative'>
+        <Image src={footerDevice} className='absolute left-1/2 -translate-x-[50%] -translate-y-[50%] xs:max-w-[250px] max-w-[170px]' alt='' />
       </div>
 
 
@@ -61,4 +65,4 @@ const UserDownload = () => {
 
   )
 }
-export default UserDownload
+export default DownloadComp

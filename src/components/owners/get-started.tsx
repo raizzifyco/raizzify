@@ -24,7 +24,7 @@ const cardData = [
     {
         imageUrl: img1,
         heading: "Growth",
-        title: "Takeover Your Competitors",
+        title: "Increase your visibility",
         description: "Stay ahead with powerful features designed to grow your salon, tools to attract new clients and keep them coming back.",
         top: "top-10"
     }
