@@ -1,4 +1,3 @@
-import footerDevice from '../../../public/images/user/user-download.png'
 import Image, { StaticImageData } from "next/image"
 import { Button } from '../ui/button';
 import { ArrowUpRightIcon } from 'lucide-react';
@@ -6,7 +5,6 @@ import QrModal from '../qr-modal';
 import { useState } from 'react';
 import playStore from '../../../public/images/playstore.png'
 import apple from '../../../public/images/apple.png'
-import bg from '../../../public/images/user/user-download-bg.png'
 import { useToggle } from '@/styles/state/toggle-state';
 import { cn } from '@/lib/utils';
 
