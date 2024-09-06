@@ -5,7 +5,9 @@ import UserHero from "./users/user-hero"
 import CustomerSay from "./users/customer-say"
 import DownloadComp from "./users/user-download"
 import Faq from "./faq"
-
+import userDownload from '../../public/images/user/user-download.png'
+import qrAndroid from '../../public/images/user/user-android.png'
+import qrIos from '../../public/images/user/user-ios.png'
 const UserSection = () => {
     return (
         <div className="font-manrope">
@@ -25,7 +27,7 @@ const UserSection = () => {
                 <Faq />
             </section>
             <section id="user-download">
-                <DownloadComp gradientTitle="RAIZZIFY" />
+                <DownloadComp qrImageAndroid={qrAndroid} qrImageIos={qrIos} gradientTitle="RAIZZIFY" image={userDownload} />
             </section>
         </div>)
 }

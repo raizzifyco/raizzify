@@ -102,18 +102,19 @@ const UserFeatures = () => {
                 </div>
                 <div className="right sm:w-[68%] w-full flex flex-col gap-y-6">
                     {rightItems.map((item, i) => (
-                        <div key={i} className={`border-2 hover:border-primary bg-cardBgColor relative sm:p-8 px-4 py-4 rounded-xl sm:h-[90vh] right-item-${i}`}>
+                        <div key={i} className={`border-2 hover:border-primary bg-cardBgColor relative sm:p-8 px-4 py-4 rounded-xl sm:h-[80vh] right-item-${i}`}>
                             <h2 className='sm:text-[32px] text-xl font-medium text-primaryTextColor'>{item.heading}</h2>
                             <div className='relative sm:h-[70%] w-full flex items-center justify-center sm:mt-6 mt-4 sm:overflow-hidden'>
                                 <Image src={item.image} className='sm:absolute xl:top-0 bottom-0 left-20 right-20 lg:-translate-x-0 sm:-translate-x-10 w-[80%]' alt='' />
                                 <div className='img-blur absolute bottom-0 h-10 w-full'></div>
                             </div>
-                            <div className='flex items-start justify-between'>
-                                <div className='xl:w-1/2 lg:w-[80%] gap-y-2 flex flex-col'>
-                                    <h3 className='font-bold text-xl text-primaryTextColor'>{item.title}</h3>
-                                    <p className='font-light text-muted-foreground text-sm'>{item.subtitle}</p>
-                                </div>
-                                <p className='text-muted-foreground'>*T&C applied</p>
+                            <div className='xl:w-1/2 lg:w-[80%] gap-y-2 flex flex-col'>
+                                <h3 className='font-bold text-xl text-primaryTextColor'>{item.title}</h3>
+                                <p className='font-light text-muted-foreground text-sm'>{item.subtitle}</p>
+                                {
+                                    i === 2 &&
+                                    <p className='text-muted-foreground'>*T&C applied</p>
+                                }
                             </div>
                         </div>
                     ))}

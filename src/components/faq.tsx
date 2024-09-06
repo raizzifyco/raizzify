@@ -90,9 +90,9 @@ const Faq = () => {
             <div className='my-10 w-full gap-y-2 bg-[#F7FEFF] rounded-lg p-6 flex flex-col items-center'>
 
                 <div className='relative h-14 w-28'>
-                    <Image src={pic1} width={50} height={50} alt='' className='absolute right-14' />
-                    <Image src={pic3} width={50} height={50} alt='' className='absolute right-0' />
-                    <Image src={pic2} width={50} height={50} alt='' className='absolute right-7' />
+                    <Image src={pic1} width={50} height={50} alt='' className='absolute rounded-full border border-white right-16' />
+                    <Image src={pic3} width={50} height={50} alt='' className='absolute rounded-full border border-white -right-2' />
+                    <Image src={pic2} width={50} height={50} alt='' className='absolute rounded-full border border-white right-7' />
                 </div>
                 <h1 className='font-semibold text-lg'>Still have questions?</h1>
                 <p className='text-center'>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>

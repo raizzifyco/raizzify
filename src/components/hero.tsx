@@ -76,25 +76,26 @@ const secondMarq = [
 
 const Hero = () => {
 
-    useGSAP(() => {
-        gsap.from(".hero", {
-            xPercent: 100
-        })
-    })
-    const handleScroll = () => {
-        gsap.to(window, { duration: 0.5, scrollTo: { y: 400 } })
-    }
+    // useGSAP(() => {
+    //     gsap.from(".hero", {
+    //         xPercent: 100
+    //     })
+    // })
+
     const handleGetStarted = () => {
         gsap.to(window, { duration: 1, scrollTo: `#download` });
+    }
+    const handleLearnMore = () => {
+        gsap.to(window, { duration: 1, scrollTo: `#features` });
     }
     return (
         <div className="flex hero flex-col justify-center items-center py-10">
             <Switch />
             <div className="flex flex-col items-center  w-full gap-y-8">
                 <div className="font-bold lg:text-[56px] whitespace-nowrap sm:text-[38px] xs:text-[30px] text-[26px] md:px-0 px-6 md:w-3/4 w-full text-center md:leading-relaxed">
-                    <h1 className="text-center tracking-tight">The all-in-one</h1>
+                    <h1 className="text-center tracking-tight">The all-in-one platform</h1>
                     <p className="text-center sm:block flex items-center flex-col tracking-tight">
-                        platform for
+                        for
                         <span className="bg-primary px-2 rounded-md text-white ml-4 leading-tight sm:inline-block block w-fit">Salon Owners</span>
                     </p>
                 </div>
@@ -103,7 +104,7 @@ const Hero = () => {
                     <Button onClick={handleGetStarted} variant={'default'} className="w-[200px] py-6 font-semibold">
                         Get Started
                     </Button>
-                    <Button onClick={handleScroll} variant={'outline'} className="w-[200px] py-6 font-semibold">
+                    <Button onClick={handleLearnMore} variant={'outline'} className="w-[200px] py-6 font-semibold">
                         Learn More
                     </Button>
                 </div>
@@ -158,7 +159,7 @@ const Hero = () => {
                 <div className="gradient-right">
 
                 </div>
-                <Image src={hero} className='w-[320px] h-[600px] mx-auto ' alt='' />
+                <Image src={hero} className='w-[300px] h-[600px] mx-auto ' alt='' />
 
                 <div className="sm:hidden flex flex-col items-center gap-y-6 mt-6">
                     <Button onClick={handleGetStarted} variant={'default'} className="sm:w-[200px] w-[300px] py-6">

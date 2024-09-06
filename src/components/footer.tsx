@@ -2,13 +2,11 @@ import Link from "next/link"
 
 const Footer = () => {
     return (
-        <div className="relative px-4 sm:px-6 md:px-8 lg:px-14 font-manrope">
-            {/* Radial Gradient */}
-
-            <div className="bg-footerBgColor rounded-b-none w-full rounded-t-[50px] md:pt-20 sm:pt-10 pt-8 pb-6 lg:px-10 px-4 sm:px-6 md:px-8">
+        <div className="relative px-2 sm:px-6 md:px-8 lg:px-14 font-manrope">
+            <div className="footer-bg rounded-b-none w-full rounded-t-[50px] md:pt-20 sm:pt-10 pt-8 pb-2 lg:px-10 px-4 sm:px-6 md:px-8">
                 <div className="max-w-screen-2xl">
                     <div className="flex md:flex-row flex-col items-start gap-y-6 justify-between w-full">
-                        <div className="flex items-start md:w-[25%] flex-col gap-y-2 relative">
+                        <div className="flex items-start md:w-[20%] flex-col gap-y-2 relative">
                             <h1 className="uppercase font-bold text-[48px] text-primary font-space-grotesk z-10">RAIZZIFY</h1>
                             <p className="text-white font-light text-sm opacity-60">Raizzify is a platform built for the salon industry to bridge the gap between salon owners and customers, bringing them together while maintaining their customers’ go-to-salon habits.</p>
                         </div>
@@ -43,11 +41,10 @@ const Footer = () => {
                                     <hr className="text-white opacity-[8%] w-1/2 mt-2" />
 
                                     <div className="flex flex-col gap-y-2 text-white font-light mt-4">
-                                        <p>You Tube</p>
-                                        <p>Instagram</p>
-                                        <p>Linkedin</p>
-                                        <p>Facebook</p>
-                                        <p>Twitter</p>
+                                        <a target="_blank" href="https://www.youtube.com/@raizzifyco">YouTube</a>
+                                        <a target="_blank" href="https://instagram.com/raizzifyco">Instagram</a>
+                                        <a target="_blank" href="https://www.linkedin.com/company/raizzifyco/">Linkedin</a>
+                                        <a target="_blank" href="https://twitter.com/raizzifyco">Twitter (X)</a>
                                     </div>
                                 </div>
                             </div>
@@ -60,9 +57,13 @@ const Footer = () => {
                         <p className="opacity-70">Raising The Lifestyle, One Step At A Time</p>
                     </div>
 
-                    <div className="text-center font-semibold text-[#3B3A3B] uppercase xl:text-[300px] lg:text-[200px] md:text-[150px] sm:text-[120px] xs:text-[100px] text-[70px] font-space-grotesk">
-                        Raizzify
+                    <div className="relative overflow-hidden">
+                        <div className="text-center font-semibold text-[#3B3A3B] uppercase xl:text-[260px] lg:text-[200px] md:text-[150px] sm:text-[120px] xs:text-[100px] text-[70px] font-space-grotesk leading-none my-0 pt-16 h-full">
+                            Raizzify
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import career3 from '../../../public/images/about/career3.png'
 import career4 from '../../../public/images/about/career4.png'
 import career5 from '../../../public/images/about/career5.png'
 import Image from "next/image"
+import Link from "next/link"
 
 const Careers = () => {
     return (
@@ -20,14 +21,16 @@ const Careers = () => {
                     <p className="text-muted-foreground">Raizzify is growing fast, and we are always looking for passionate, dynamic, and talented individuals to join our distributed team all around the world.</p>
                     <p className="text-muted-foreground">Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work. Read more about </p>
 
-                    <Button className="mt-6">
-                        Open Position
-                        <ArrowUpRight size={20} className="ml-2" />
-                    </Button>
+                    <Link href={`https://wellfound.com/raizzifyco`} target="_blank">
+                        <Button className="mt-6">
+                            Open Position
+                            <ArrowUpRight size={20} className="ml-2" />
+                        </Button>
+                    </Link>
                 </div>
                 <div className="flex flex-col items-center gap-y-4">
                     <div className="flex items-end gap-x-4">
-                        <Image src={career1} alt="" className="xs:w-[160px] w-1/2 h-[160px] object-cover"/>
+                        <Image src={career1} alt="" className="xs:w-[160px] w-1/2 h-[160px] object-cover" />
                         <Image src={career2} alt="" className="xs:w-[160px] w-1/2 h-[240px] object-cover" />
                     </div>
                     <div className="flex items-start gap-x-4">

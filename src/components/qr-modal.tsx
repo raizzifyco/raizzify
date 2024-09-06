@@ -4,16 +4,15 @@ import {
     DialogDescription,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
 } from "@/components/ui/dialog"
-import Image from "next/image";
-import qrcode from '../../public/images/QRCode.png'
+import Image, { StaticImageData } from "next/image";
 interface QrModalProps {
     title: string;
     open: boolean;
     setOpen: (open: boolean) => void;
+    image : StaticImageData;
 }
-const QrModal = ({ title, open, setOpen }: QrModalProps) => {
+const QrModal = ({ title, open, setOpen,image }: QrModalProps) => {
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
@@ -27,7 +26,7 @@ const QrModal = ({ title, open, setOpen }: QrModalProps) => {
                                     Scan this QR  to Download Raizzify App on your {title} Device.
                                 </p>
                                 <div className="border-primary border-2 mt-4 rounded-md flex items-center justify-center bg-[#F3FBFC] w-[200px] h-[200px]">
-                                    <Image src={qrcode} alt="" className="w-[180px] h-[180px]" />
+                                    <Image src={image} alt="" className="w-[180px] h-[180px]" />
                                 </div>
                             </div>
                             <div className="w-64 h-64 z-[-1] rounded-full bg-[#F3FBFC] absolute -top-[131px] -left-[112px]">

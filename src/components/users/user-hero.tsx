@@ -8,14 +8,18 @@ import gsap from '@/lib/gsap-setup'
 
 const UserHero = () => {
 
-    useGSAP(() => {
-        gsap.from(".hero", {
-            xPercent: -100
-        })
-    })
+    // useGSAP(() => {
+    //     gsap.from(".hero", {
+    //         xPercent: -100
+    //     })
+    // })
 
     const handleGetStarted = () => {
         gsap.to(window, { duration: 1, scrollTo: `#faqs` });
+    }
+
+    const handleLearnMore = () => {
+        gsap.to(window, { duration: 1, scrollTo: `#features` });
     }
     return (
         <div className="flex hero flex-col justify-center items-center py-10 px-4">
@@ -39,7 +43,7 @@ const UserHero = () => {
                     <Button onClick={handleGetStarted} variant={'default'} className="sm:w-[200px] w-[300px] py-6 font-semibold">
                         Book Now
                     </Button>
-                    <Button variant={'outline'} className="sm:w-[200px] w-[300px] py-6 font-semibold">
+                    <Button onClick={handleLearnMore} variant={'outline'} className="sm:w-[200px] w-[300px] py-6 font-semibold">
                         Learn More
                     </Button>
                 </div>

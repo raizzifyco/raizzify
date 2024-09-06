@@ -87,9 +87,17 @@
 .download-bg {
   background-image: url("../../public/images/user/user-download-bg.png");
   background-size: cover; /* Ensures the image covers the entire container */
-  background-position: center; /* Centers the image */
+  background-position: top left; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
   background-attachment: fixed; /* Keeps the background image fixed during scrolling */
-  height: 100vh; /* Ensures the container takes up the full viewport height */
-  width: 100%; /* Ensures the container takes up the full width */
+  height: 100vh; 
+  width: 100%; 
+}
+.footer-bg {
+  background-image: url("../../public/images/footer-bg.png");
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: top left; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background image fixed during scrolling */
+  width: 100%; 
 }

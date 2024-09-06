@@ -13,6 +13,16 @@ export const ownerTestimonials = [
         name: "Mr. Shahrukh",
         designation: "Clippers Cutters",
         review: "We just started Raizzify for our salon. It's easy to use, even for us who aren't great with computers. We love how it handles bookings and also let us sell our products on the app. Can't wait to see how our customers like it!"
+    },
+    {
+        name: "Ms. Priyanka",
+        designation: "Glow Beauty Studio",
+        review: "Raizzify has been a game changer for our studio! The booking process is smooth, and our clients love the convenience of purchasing products directly through the app. It has definitely helped us increase our revenue."
+    },
+    {
+        name: "Mr. Rahul",
+        designation: "Urban Groomers",
+        review: "Using Raizzify has made managing our salon so much easier. Our clients find it simple to book appointments, and we’ve seen a boost in product sales since integrating with the app. We're thrilled with the results!"
     }
 ];
 

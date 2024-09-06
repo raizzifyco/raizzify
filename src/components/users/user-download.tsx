@@ -1,5 +1,5 @@
 import footerDevice from '../../../public/images/user/user-download.png'
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import { Button } from '../ui/button';
 import { ArrowUpRightIcon } from 'lucide-react';
 import QrModal from '../qr-modal';
@@ -7,20 +7,26 @@ import { useState } from 'react';
 import playStore from '../../../public/images/playstore.png'
 import apple from '../../../public/images/apple.png'
 import bg from '../../../public/images/user/user-download-bg.png'
+import { useToggle } from '@/styles/state/toggle-state';
+import { cn } from '@/lib/utils';
 
 interface DownloadCompProps {
   gradientTitle: string;
+  image: StaticImageData;
+  qrImageAndroid: StaticImageData;
+  qrImageIos: StaticImageData;
 }
-const DownloadComp = ({ gradientTitle }: DownloadCompProps) => {
+const DownloadComp = ({ gradientTitle, image, qrImageAndroid, qrImageIos }: DownloadCompProps) => {
 
   const [android, setAndroidOpen] = useState<boolean>(false)
   const [ios, setIosOpen] = useState<boolean>(false)
 
+  const { isToggled } = useToggle()
   return (
     <div>
-      <div className="download-bg flex items-center justify-center py-10 pb-60 px-4">
+      <div className="download-bg flex items-center justify-center py-10 md:pb-60 pb-52 px-4">
         <div className="flex flex-col gap-y-6">
-          <h1 className="sm:text-[64px] xs:text-[48px] text-[40px] text-white font-medium text-center font-cabin">Start Using <span className="text-primary font-space-grotesk">{gradientTitle}</span> Now</h1>
+          <h1 className="sm:text-[64px] xs:text-[48px] text-[40px] text-white font-medium leading-tight text-center font-cabin">Start Using <span className="text-primary font-space-grotesk">{gradientTitle}</span> Now</h1>
           <p className="text-tertiaryColor font-light text-center"> Download our app now to enjoy a seamless and <br />
             personalised salon experience.</p>
 
@@ -54,13 +60,13 @@ const DownloadComp = ({ gradientTitle }: DownloadCompProps) => {
         </div>
       </div>
 
-      <div className='bg-white xs:min-h-[60vh] h-[50vh] relative'>
-        <Image src={footerDevice} className='absolute left-1/2 -translate-x-[50%] -translate-y-[50%] xs:max-w-[250px] max-w-[170px]' alt='' />
+      <div className={cn(`bg-white  relative md:min-h-[60vh] sm:min-h-[53vh] xs:min-h-[41vh] min-h-[32vh]`)}>
+        <Image src={image} className={cn(`absolute left-1/2 -translate-x-[40%] -translate-y-[40%] md:max-w-[450px] sm:max-w-[400px] xs:max-w-[350px] max-w-[280px]`)} alt='' />
       </div>
 
 
-      <QrModal open={android} title="Android" setOpen={setAndroidOpen} />
-      <QrModal open={ios} title="iOS" setOpen={setIosOpen} />
+      <QrModal image={qrImageAndroid} open={android} title="Android" setOpen={setAndroidOpen} />
+      <QrModal image={qrImageIos} open={ios} title="iOS" setOpen={setIosOpen} />
     </div>
 
   )

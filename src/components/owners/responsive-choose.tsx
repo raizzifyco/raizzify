@@ -16,7 +16,7 @@ const ResponsiveChoose = () => {
     const itemsData = [
         {
             id: 1,
-            title: "Your Shop The Internet",
+            title: "Your Shop on The Internet",
             subtitle: "Sign up on Raizzify to quickly get your salon online and start enjoying digital benefits",
             img: scrollImg1
 

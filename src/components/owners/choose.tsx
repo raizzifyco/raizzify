@@ -1,5 +1,5 @@
 import scrollImg1 from '../../../public/images/owners/choose/scroll-img1.png'
-import scrollImg2 from '../../../public/images/user/user-download.png'
+import scrollImg2 from '../../../public/images/owners/choose/scroll-img2.png'
 import scrollImg3 from '../../../public/images/owners/choose/scroll-img3.png'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from "@gsap/react"
@@ -9,7 +9,7 @@ import Image, { StaticImageData } from "next/image"
 import gsap from '@/lib/gsap-setup'
 
 const contentData = [
-    { id: "content1", title: "Your shop the Internet", description: "Sign up on Raizzify to quickly get your salon online and start enjoying digital benefits.", image: scrollImg1 },
+    { id: "content1", title: "Your shop on the Internet", description: "Sign up on Raizzify to quickly get your salon online and start enjoying digital benefits.", image: scrollImg1 },
     { id: "content2", title: "Easily Manage Your Customers", description: "Raizzify makes it easy to manage appointments, send reminders, and ensure your clients have a seamless experience every time.", image: scrollImg2 },
     { id: "content3", title: "Attracts customers with discounts", description: "Raizzify allows you to easily create and advertise special offers", image: scrollImg3 },
 ];

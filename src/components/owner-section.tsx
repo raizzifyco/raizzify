@@ -5,7 +5,9 @@ import GetStarted from "./owners/get-started"
 import CustomerSay from "./users/customer-say"
 import Faq from "./faq"
 import DownloadComp from "./users/user-download"
-
+import ownerDownload from "../../public/images/owners/owner-download.png"
+import qrAndroid from '../../public/images/owners/owner-android.png'
+import qrIos from '../../public/images/owners/owner-ios.png'
 const OwnerSection = () => {
     return (
         <main className="home overflow-x-hidden overflow-y-hidden font-manrope">
@@ -28,7 +30,7 @@ const OwnerSection = () => {
                 <Faq />
             </section>
             <section id="download">
-                <DownloadComp gradientTitle={"RAIZZIFY BUSINESS"} />
+                <DownloadComp qrImageAndroid={qrAndroid} qrImageIos={qrIos} gradientTitle={"RAIZZIFY BUSINESS"} image={ownerDownload} />
             </section>
         </main>)
 }

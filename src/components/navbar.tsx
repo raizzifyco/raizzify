@@ -29,7 +29,7 @@ const Navbar = () => {
       <header className="px-4 font-manrope sm:px-6 md:px-8 z-[100] lg:px-14 py-6 h-16 flex items-center">
         <nav className="w-full flex items-center justify-between">
           <Link href={'/'} className="text-primary flex items-center gap-x-2 font-bold text-2xl uppercase">
-            <Image className="max-w-[38px] rounded-full border-2 border-primary" src={logo} alt="Logo" />
+            <Image className="max-w-[42px] rounded-full" src={logo} alt="Logo" />
             <h1 className="leading-loose font-space-grotesk font-bold text-4xl text-primary">RAIZZIFY</h1>
           </Link>
           {
@@ -39,22 +39,26 @@ const Navbar = () => {
               <p onClick={() => scrollToSection("how-we-work")} className="cursor-pointer text-secondaryTextColor hover:text-primary">How we work</p>
               <p onClick={() => scrollToSection("careers")} className="cursor-pointer text-secondaryTextColor hover:text-primary">Careers</p> */}
             </div> :
-              <div className="md:flex hidden items-center gap-x-12 font-medium">
+              <div className={`md:flex hidden items-center gap-x-12 font-medium ${isToggled ? "me-24" : "me-16"}`}>
                 <p onClick={() => scrollToSection("features")} className="cursor-pointer text-secondaryTextColor hover:text-primary">Features</p>
                 {
                   !isToggled &&
                   <>
                     <p onClick={() => scrollToSection("benefits")} className="cursor-pointer text-secondaryTextColor hover:text-primary">Benefits</p>
-                    <p onClick={() => scrollToSection("pricing")} className="cursor-pointer text-secondaryTextColor hover:text-primary">Pricing</p>
+                    {/* <p onClick={() => scrollToSection("pricing")} className="cursor-pointer text-secondaryTextColor hover:text-primary">Pricing</p> */}
                   </>
                 }
                 <p onClick={() => scrollToSection("testimonials")} className="cursor-pointer text-secondaryTextColor hover:text-primary">Testimonials</p>
                 <p onClick={() => scrollToSection("faqs")} className="cursor-pointer text-secondaryTextColor hover:text-primary">FAQs</p>
               </div>
           }
-          <Button className="md:block hidden">
-            {isToggled ? "Book Now" : "Get Started"}
-          </Button>
+          {
+            pathname === "/about/" ? <Button onClick={() => scrollToSection("user-download")} className="md:block hidden">
+              Get Started
+            </Button> : <Button onClick={() => scrollToSection(isToggled ? "user-download" : "download")} className="md:block hidden">
+              {isToggled ? "Book Now" : "Get Started"}
+            </Button>
+          }
         </nav>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger>

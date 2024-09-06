@@ -1,9 +1,9 @@
 import { Button } from "../ui/button"
-import story1 from '../../../public/images/about/story1.jpeg'
-import story2 from '../../../public/images/about/story2.jpeg'
-import story3 from '../../../public/images/about/story3.jpeg'
-import story4 from '../../../public/images/about/story4.jpeg'
-import story5 from '../../../public/images/about/story5.jpeg'
+import story1 from '../../../public/images/about/story1.png'
+import story2 from '../../../public/images/about/story2.png'
+import story3 from '../../../public/images/about/story3.png'
+import story4 from '../../../public/images/about/story4.png'
+import story5 from '../../../public/images/about/story5.png'
 import Image from "next/image"
 const Story = () => {
     return (
