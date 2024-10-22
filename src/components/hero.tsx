@@ -16,6 +16,7 @@ import '../styles/app.css'
 import Switch from "./switch"
 import gsap from '@/lib/gsap-setup'
 import { useGSAP } from '@gsap/react'
+import Link from 'next/link'
 const firstMarq = [
     {
         imageUrl: marquee4,
@@ -101,9 +102,12 @@ const Hero = () => {
                 </div>
                 <p className='text-secondaryTextColor lg:px-14 md:px-8 px-4 text-center lg:text-xl md:text-lg text-sm font-normal'>Digitalize your salon, Maximize Revenue Insights, My Customers, My Bookings, My Team, Discounts</p>
                 <div className="sm:flex hidden items-center gap-x-6">
-                    <Button onClick={handleGetStarted} variant={'default'} className="w-[200px] py-6 font-semibold">
-                        Get Started
-                    </Button>
+                    <Link href={`https://business.raizzify.com/`} target="_blank">
+                        <Button onClick={handleGetStarted} variant={'default'} className="w-[200px] py-6 font-semibold">
+                            Get Started
+                        </Button>
+                    </Link>
+
                     <Button onClick={handleLearnMore} variant={'outline'} className="w-[200px] py-6 font-semibold">
                         Learn More
                     </Button>
