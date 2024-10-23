@@ -1,0 +1,14 @@
+[
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.raizzify.hercules",
+        "sha256_cert_fingerprints": [
+          "3E:34:B2:DF:47:1D:FA:CB:B3:08:28:72:9F:46:FA:31:0C:79:19:8E:4F:2F:FD:48:76:EA:CB:8F:78:2B:BD:2B"
+        ]
+      }
+    }
+  ]
