@@ -7,7 +7,7 @@ const DeepLinkHandler: React.FC = () => {
 
   useEffect(() => {
     const deepLinkUrl = `myapp://www.raizzify.com/deep/reward`;
-    localStorage.setItem('deferredLink', deepLinkUrl);
+    localStorage.setItem('raizzDeferredLink', deepLinkUrl);
 
     window.location.href = deepLinkUrl;
 
@@ -30,7 +30,7 @@ const DeepLinkHandler: React.FC = () => {
       clearTimeout(timeout);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  }, [appOpened]);
+  });
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
