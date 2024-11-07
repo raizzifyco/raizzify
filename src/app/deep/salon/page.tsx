@@ -12,6 +12,7 @@ const DeepLinkHandler: React.FC = () => {
 
     if (shopId) {
       const deepLinkUrl = `myapp://www.raizzify.com/deep/salon?id=${shopId}`;
+      localStorage.setItem('raizzDeferredLink', deepLinkUrl);
 
       window.location.href = deepLinkUrl;
 
@@ -35,7 +36,7 @@ const DeepLinkHandler: React.FC = () => {
         document.removeEventListener('visibilitychange', handleVisibilityChange);
       };
     }
-  });
+  }, [appOpened]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
@@ -47,7 +48,9 @@ const DeepLinkHandler: React.FC = () => {
       </p>
       {!appOpened && (
         <button 
-          onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.raizzify.hercules&hl=en_IN'} 
+          onClick={() => {
+            window.location.href = 'https://play.google.com/store/apps/details?id=com.raizzify.hercules&hl=en_IN';
+          }} 
           className="mt-4 bg-[#00bcd3] text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-[#36c4d5] transition duration-200"
         >
           {`Go to Google Play Store`}

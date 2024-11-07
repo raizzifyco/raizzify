@@ -6,30 +6,31 @@ const DeepLinkHandler: React.FC = () => {
   const [appOpened, setAppOpened] = useState(false);
 
   useEffect(() => {
-      const deepLinkUrl = `myapp://www.raizzify.com/deep/reward`;
+    const deepLinkUrl = `myapp://www.raizzify.com/deep/reward`;
+    localStorage.setItem('deferredLink', deepLinkUrl);
 
-      window.location.href = deepLinkUrl;
+    window.location.href = deepLinkUrl;
 
-      const timeout = setTimeout(() => {
-        if (!appOpened) {
-          setAppOpened(false);
-        }
-      }, 2000);
+    const timeout = setTimeout(() => {
+      if (!appOpened) {
+        setAppOpened(false);
+      }
+    }, 2000);
 
-      const handleVisibilityChange = () => {
-        if (document.visibilityState === 'visible') {
-          setAppOpened(true);
-          clearTimeout(timeout);
-        }
-      };
-
-      document.addEventListener('visibilitychange', handleVisibilityChange);
-
-      return () => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        setAppOpened(true);
         clearTimeout(timeout);
-        document.removeEventListener('visibilitychange', handleVisibilityChange);
-      };
-  });
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      clearTimeout(timeout);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [appOpened]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
@@ -37,7 +38,7 @@ const DeepLinkHandler: React.FC = () => {
         Redirecting to the app...
       </p>
       <p className="mt-4 text-gray-600">
-       {` If the app doesn't open, you can download it:`}
+        If the app doesn't open, you can download it:
       </p>
       {!appOpened && (
         <button 
