@@ -38,14 +38,14 @@ const DeepLinkHandler: React.FC = () => {
         Redirecting to the app...
       </p>
       <p className="mt-4 text-gray-600">
-        If the app doesn't open, you can download it:
+        {`If the app doesn't open, you can download it:`}
       </p>
       {!appOpened && (
-        <button 
-          onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.raizzify.hercules&hl=en_IN'} 
+        <button
+          onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.raizzify.hercules&hl=en_IN'}
           className="mt-4 bg-[#00bcd3] text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-[#36c4d5] transition duration-200"
         >
-          Go to Google Play Store
+          {`Go to Google Play Store`}
         </button>
       )}
     </div>
