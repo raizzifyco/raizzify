@@ -37,7 +37,7 @@ const DeepLinkHandler: React.FC = () => {
 
   const sendUniqueIdToBackend = async (uniqueId: string, deferredLink: string) => {
     try {
-      await fetch('https://api.raizzify.com/common/deep-link', {
+      await fetch('https://api.raizzify.com/api/v1/common/deep-link', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
