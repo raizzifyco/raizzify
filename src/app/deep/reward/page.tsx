@@ -5,9 +5,12 @@ import { useEffect, useState } from 'react';
 const DeepLinkHandler: React.FC = () => {
   const [appOpened, setAppOpened] = useState(false);
 
+  // Generate unique ID once
+  const uniqueId = generateUniqueId();
+  const deepLinkUrl = `myapp://www.raizzify.com/deep/reward?referrer=${uniqueId}`;
+
   useEffect(() => {
-    const deepLinkUrl = `myapp://www.raizzify.com/deep/reward`;
-    localStorage.setItem('raizzDeferredLink', deepLinkUrl);
+    sendUniqueIdToBackend(uniqueId, deepLinkUrl);
 
     window.location.href = deepLinkUrl;
 
@@ -30,7 +33,21 @@ const DeepLinkHandler: React.FC = () => {
       clearTimeout(timeout);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
-  });
+  }, [appOpened, deepLinkUrl, uniqueId]);
+
+  const sendUniqueIdToBackend = async (uniqueId: string, deferredLink: string) => {
+    try {
+      await fetch('https://api.raizzify.com/common/deep-link', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ unique_id: uniqueId, deferred_link: deferredLink }),
+      });
+    } catch (error) {
+      console.error('Error sending unique ID to backend:', error);
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
@@ -42,7 +59,7 @@ const DeepLinkHandler: React.FC = () => {
       </p>
       {!appOpened && (
         <button
-          onClick={() => window.location.href = 'https://play.google.com/store/apps/details?id=com.raizzify.hercules&hl=en_IN'}
+          onClick={() => window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}`}
           className="mt-4 bg-[#00bcd3] text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-[#36c4d5] transition duration-200"
         >
           {`Go to Google Play Store`}
@@ -50,6 +67,10 @@ const DeepLinkHandler: React.FC = () => {
       )}
     </div>
   );
+};
+
+const generateUniqueId = () => {
+  return `id-${Date.now()}`;
 };
 
 export default DeepLinkHandler;

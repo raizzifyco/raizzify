@@ -5,16 +5,18 @@ import { useEffect, useState } from 'react';
 const DeepLinkHandler: React.FC = () => {
   const [appOpened, setAppOpened] = useState(false);
 
+  const uniqueId = generateUniqueId();
+
   useEffect(() => {
     const currentUrl = window.location.href;
     const url = new URL(currentUrl);
     const shopId = url.searchParams.get('id');
 
     if (shopId) {
-      const deepLinkUrl = `myapp://www.raizzify.com/deep/salon?id=${shopId}`;
-      localStorage.setItem('raizzDeferredLink', deepLinkUrl);
+      const deferredLink = `myapp://www.raizzify.com/deep/salon?id=${shopId}&referrer=${uniqueId}`;
+      sendUniqueIdToBackend(uniqueId, deferredLink);
 
-      window.location.href = deepLinkUrl;
+      window.location.href = deferredLink;
 
       const timeout = setTimeout(() => {
         if (!appOpened) {
@@ -36,7 +38,21 @@ const DeepLinkHandler: React.FC = () => {
         document.removeEventListener('visibilitychange', handleVisibilityChange);
       };
     }
-  });
+  }, [appOpened, uniqueId]);
+
+  const sendUniqueIdToBackend = async (uniqueId: string, deferredLink: string) => {
+    try {
+      await fetch('https://api.raizzify.com/common/deep-link', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ unique_id: uniqueId, deferred_link: deferredLink }),
+      });
+    } catch (error) {
+      console.error('Error sending unique ID to backend:', error);
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
@@ -49,7 +65,7 @@ const DeepLinkHandler: React.FC = () => {
       {!appOpened && (
         <button 
           onClick={() => {
-            window.location.href = 'https://play.google.com/store/apps/details?id=com.raizzify.hercules&hl=en_IN';
+            window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}`;
           }} 
           className="mt-4 bg-[#00bcd3] text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-[#36c4d5] transition duration-200"
         >
@@ -58,6 +74,10 @@ const DeepLinkHandler: React.FC = () => {
       )}
     </div>
   );
+};
+
+const generateUniqueId = () => {
+  return `id-${Date.now()}`;
 };
 
 export default DeepLinkHandler;
