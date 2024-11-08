@@ -4,15 +4,16 @@ import { useEffect, useState } from 'react';
 
 const DeepLinkHandler: React.FC = () => {
   const [appOpened, setAppOpened] = useState(false);
+  const [deferredLink, setDeferredLink] = useState('');
 
   const uniqueId = generateUniqueId();
 
-  const currentUrl = window.location.href;
-  const url = new URL(currentUrl);
-  const shopId = url.searchParams.get('id');
-  const deferredLink = `myapp://www.raizzify.com/deep/salon?id=${shopId}&referrer=${uniqueId}`;
-
   useEffect(() => {
+    const currentUrl = window.location.href;
+    const url = new URL(currentUrl);
+    const shopId = url.searchParams.get('id');
+    
+    setDeferredLink(`myapp://www.raizzify.com/deep/salon?id=${shopId}&referrer=${uniqueId}`);
 
     if (shopId) {
       
