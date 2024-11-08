@@ -10,7 +10,6 @@ const DeepLinkHandler: React.FC = () => {
   const deepLinkUrl = `myapp://www.raizzify.com/deep/reward?referrer=${uniqueId}`;
 
   useEffect(() => {
-    sendUniqueIdToBackend(uniqueId, deepLinkUrl);
 
     window.location.href = deepLinkUrl;
 
@@ -59,7 +58,10 @@ const DeepLinkHandler: React.FC = () => {
       </p>
       {!appOpened && (
         <button
-          onClick={() => window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}`}
+          onClick={() => {
+            sendUniqueIdToBackend(uniqueId, deepLinkUrl);
+            window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}`
+          }}
           className="mt-4 bg-[#00bcd3] text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-[#36c4d5] transition duration-200"
         >
           {`Go to Google Play Store`}
@@ -70,7 +72,7 @@ const DeepLinkHandler: React.FC = () => {
 };
 
 const generateUniqueId = () => {
-  return `id-${Date.now()}`;
+  return `ddl-${Date.now()}`;
 };
 
 export default DeepLinkHandler;

@@ -7,15 +7,15 @@ const DeepLinkHandler: React.FC = () => {
 
   const uniqueId = generateUniqueId();
 
+  const currentUrl = window.location.href;
+  const url = new URL(currentUrl);
+  const shopId = url.searchParams.get('id');
+  const deferredLink = `myapp://www.raizzify.com/deep/salon?id=${shopId}&referrer=${uniqueId}`;
+
   useEffect(() => {
-    const currentUrl = window.location.href;
-    const url = new URL(currentUrl);
-    const shopId = url.searchParams.get('id');
 
     if (shopId) {
-      const deferredLink = `myapp://www.raizzify.com/deep/salon?id=${shopId}&referrer=${uniqueId}`;
-      sendUniqueIdToBackend(uniqueId, deferredLink);
-
+      
       window.location.href = deferredLink;
 
       const timeout = setTimeout(() => {
@@ -63,10 +63,11 @@ const DeepLinkHandler: React.FC = () => {
         {`If the app doesn't open, you can download it:`}
       </p>
       {!appOpened && (
-        <button 
+        <button
           onClick={() => {
+            sendUniqueIdToBackend(uniqueId, deferredLink);
             window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}`;
-          }} 
+          }}
           className="mt-4 bg-[#00bcd3] text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-[#36c4d5] transition duration-200"
         >
           {`Go to Google Play Store`}
@@ -77,7 +78,7 @@ const DeepLinkHandler: React.FC = () => {
 };
 
 const generateUniqueId = () => {
-  return `id-${Date.now()}`;
+  return `ddl-${Date.now()}`;
 };
 
 export default DeepLinkHandler;
