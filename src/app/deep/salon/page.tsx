@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 const DeepLinkHandler: React.FC = () => {
   const [appOpened, setAppOpened] = useState(false);
-  const [deferredLink, setDeferredLink] = useState('');
 
   const uniqueId = generateUniqueId();
 
@@ -12,11 +11,12 @@ const DeepLinkHandler: React.FC = () => {
     const currentUrl = window.location.href;
     const url = new URL(currentUrl);
     const shopId = url.searchParams.get('id');
-    
-    setDeferredLink(`myapp://www.raizzify.com/deep/salon?id=${shopId}&referrer=${uniqueId}`);
 
     if (shopId) {
-      
+
+      const deferredLink = `myapp://www.raizzify.com/deep/salon?id=${shopId}&referrer=${uniqueId}`;
+      sendUniqueIdToBackend(uniqueId, deferredLink);
+
       window.location.href = deferredLink;
 
       const timeout = setTimeout(() => {
@@ -65,10 +65,7 @@ const DeepLinkHandler: React.FC = () => {
       </p>
       {!appOpened && (
         <button
-          onClick={async () => {
-            await sendUniqueIdToBackend(uniqueId, deferredLink);
-            window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}`;
-          }}
+          onClick={() => { window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}` }}
           className="mt-4 bg-[#00bcd3] text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-[#36c4d5] transition duration-200"
         >
           {`Go to Google Play Store`}
