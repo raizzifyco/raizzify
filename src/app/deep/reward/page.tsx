@@ -14,8 +14,8 @@ const DeepLinkHandler: React.FC = () => {
 
     if (shopId) {
 
-      const deferredLink = `raizz://www.raizzify.com/deep/reward?id=${shopId}&referrer=${uniqueId}`;
-      sendUniqueIdToBackend(uniqueId, deferredLink);
+      const deferredLink = `raizz://www.raizzify.com/deep/reward?referrer=${uniqueId}`;
+      sendUniqueIdToBackend(uniqueId, `${deferredLink}&id=${shopId}`);
 
       window.location.href = deferredLink;
 
