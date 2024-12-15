@@ -5,38 +5,45 @@ import { useEffect, useState } from 'react';
 const DeepLinkHandler: React.FC = () => {
   const [appOpened, setAppOpened] = useState(false);
 
-  // Generate unique ID once
   const uniqueId = generateUniqueId();
-  const deepLinkUrl = `myapp://www.raizzify.com/deep/reward?referrer=${uniqueId}`;
 
   useEffect(() => {
-    sendUniqueIdToBackend(uniqueId, deepLinkUrl);
-    window.location.href = deepLinkUrl;
+    const currentUrl = window.location.href;
+    const url = new URL(currentUrl);
+    const shopId = url.searchParams.get('id');
 
-    const timeout = setTimeout(() => {
-      if (!appOpened) {
-        setAppOpened(false);
-      }
-    }, 2000);
+    if (shopId) {
 
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        setAppOpened(true);
+      const deferredLink = `raizz://www.raizzify.com/deep/reward?id=${shopId}&referrer=${uniqueId}`;
+      sendUniqueIdToBackend(uniqueId, deferredLink);
+
+      window.location.href = deferredLink;
+
+      const timeout = setTimeout(() => {
+        if (!appOpened) {
+          setAppOpened(false);
+        }
+      }, 2000);
+
+      const handleVisibilityChange = () => {
+        if (document.visibilityState === 'visible') {
+          setAppOpened(true);
+          clearTimeout(timeout);
+        }
+      };
+
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+
+      return () => {
         clearTimeout(timeout);
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    return () => {
-      clearTimeout(timeout);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, [appOpened, deepLinkUrl, uniqueId]);
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+      };
+    }
+  }, [appOpened, uniqueId]);
 
   const sendUniqueIdToBackend = async (uniqueId: string, deferredLink: string) => {
     try {
-      await fetch('https://api.raizzify.com/api/v1/common/deep-link', {
+      await fetch('https://nucleus.raizzify.com/api/v1/common/deep-link', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,7 +65,7 @@ const DeepLinkHandler: React.FC = () => {
       </p>
       {!appOpened && (
         <button
-          onClick={() => window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}`}
+          onClick={() => { window.location.href = `https://play.google.com/store/apps/details?id=com.raizzify.hercules&referrer=${uniqueId}` }}
           className="mt-4 bg-[#00bcd3] text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-[#36c4d5] transition duration-200"
         >
           {`Go to Google Play Store`}
@@ -69,7 +76,7 @@ const DeepLinkHandler: React.FC = () => {
 };
 
 const generateUniqueId = () => {
-  return `ddl-${Date.now()}`;
+  return `pddl-${Date.now()}`;
 };
 
 export default DeepLinkHandler;
