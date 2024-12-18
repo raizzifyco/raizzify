@@ -13,43 +13,50 @@ const DeepLinkHandler: React.FC = () => {
     const shopId = url.searchParams.get('id');
 
     if (shopId) {
-
       const deferredLink = `raizz://www.raizzify.com/deep/reward?referrer=${uniqueId}`;
-      sendUniqueIdToBackend(uniqueId, `${deferredLink}&id=${shopId}`);
 
-      window.location.href = deferredLink;
+      const processDeepLink = async () => {
+        await sendUniqueIdToBackend(uniqueId, `${deferredLink}&id=${shopId}`);
+        window.location.href = deferredLink;
 
-      const timeout = setTimeout(() => {
-        if (!appOpened) {
-          setAppOpened(false);
-        }
-      }, 2000);
+        const timeout = setTimeout(() => {
+          if (!appOpened) {
+            setAppOpened(false);
+          }
+        }, 2000);
 
-      const handleVisibilityChange = () => {
-        if (document.visibilityState === 'visible') {
-          setAppOpened(true);
+        const handleVisibilityChange = () => {
+          if (document.visibilityState === 'visible') {
+            setAppOpened(true);
+            clearTimeout(timeout);
+          }
+        };
+
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
           clearTimeout(timeout);
-        }
+          document.removeEventListener('visibilitychange', handleVisibilityChange);
+        };
       };
 
-      document.addEventListener('visibilitychange', handleVisibilityChange);
-
-      return () => {
-        clearTimeout(timeout);
-        document.removeEventListener('visibilitychange', handleVisibilityChange);
-      };
+      processDeepLink();
     }
   }, [appOpened, uniqueId]);
 
   const sendUniqueIdToBackend = async (uniqueId: string, deferredLink: string) => {
     try {
-      await fetch('https://nucleus.raizzify.com/api/v1/common/deep-link', {
+      const response = await fetch('https://nucleus.raizzify.com/api/v1/common/deep-link', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ unique_id: uniqueId, deferred_link: deferredLink }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Failed to send unique ID: ${response.statusText}`);
+      }
     } catch (error) {
       console.error('Error sending unique ID to backend:', error);
     }

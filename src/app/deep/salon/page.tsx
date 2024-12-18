@@ -13,45 +13,57 @@ const DeepLinkHandler: React.FC = () => {
     const shopId = url.searchParams.get('id');
 
     if (shopId) {
-
       const deferredLink = `raizz://www.raizzify.com/deep/salon?id=${shopId}&referrer=${uniqueId}`;
-      sendUniqueIdToBackend(uniqueId, deferredLink);
 
-      window.location.href = deferredLink;
+      const processDeepLink = async () => {
+        try {
+          await sendUniqueIdToBackend(uniqueId, deferredLink);
+          window.location.href = deferredLink;
 
-      const timeout = setTimeout(() => {
-        if (!appOpened) {
-          setAppOpened(false);
-        }
-      }, 2000);
+          const timeout = setTimeout(() => {
+            if (!appOpened) {
+              setAppOpened(false);
+            }
+          }, 2000);
 
-      const handleVisibilityChange = () => {
-        if (document.visibilityState === 'visible') {
-          setAppOpened(true);
-          clearTimeout(timeout);
+          const handleVisibilityChange = () => {
+            if (document.visibilityState === 'visible') {
+              setAppOpened(true);
+              clearTimeout(timeout);
+            }
+          };
+
+          document.addEventListener('visibilitychange', handleVisibilityChange);
+
+          return () => {
+            clearTimeout(timeout);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+          };
+        } catch (error) {
+          console.error('Error processing deep link:', error);
         }
       };
 
-      document.addEventListener('visibilitychange', handleVisibilityChange);
-
-      return () => {
-        clearTimeout(timeout);
-        document.removeEventListener('visibilitychange', handleVisibilityChange);
-      };
+      processDeepLink();
     }
   }, [appOpened, uniqueId]);
 
   const sendUniqueIdToBackend = async (uniqueId: string, deferredLink: string) => {
     try {
-      await fetch('https://api.raizzify.com/api/v1/common/deep-link', {
+      const response = await fetch('https://api.raizzify.com/api/v1/common/deep-link', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ unique_id: uniqueId, deferred_link: deferredLink }),
       });
+
+      if (!response.ok) {
+        throw new Error(`Failed to send unique ID: ${response.statusText}`);
+      }
     } catch (error) {
       console.error('Error sending unique ID to backend:', error);
+      throw error;
     }
   };
 
