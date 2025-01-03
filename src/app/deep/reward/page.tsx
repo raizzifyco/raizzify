@@ -4,11 +4,15 @@ import { useEffect, useState } from 'react';
 
 const DeepLinkHandler: React.FC = () => {
   const [appOpened, setAppOpened] = useState(false);
+  const [isIOS, setIsIOS] = useState(false);
 
   const uniqueId = generateUniqueId();
-  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsIOS(/iPhone|iPad|iPod/i.test(navigator.userAgent));
+    }
+
     const currentUrl = window.location.href;
     const url = new URL(currentUrl);
     const shopId = url.searchParams.get('id');
