@@ -95,7 +95,7 @@ const DeepLinkHandler: React.FC = () => {
 };
 
 const generateUniqueId = () => {
-  return `pddl-${Date.now()}`;
+  return `pddl-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
 };
 
 export default DeepLinkHandler;
