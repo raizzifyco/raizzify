@@ -1,14 +1,20 @@
-import { create } from 'zustand'
+import { create } from "zustand";
+
+export enum Section {
+  user = "user",
+  salon = "salon",
+  partner = "partner",
+}
 
 interface ToggleState {
-    isToggled: boolean;
-    toggle: (val: boolean) => void;
+  section: Section;
+  changeSection: (val: Section) => void;
 }
 export const useToggle = create<ToggleState>((set) => {
-    return {
-        isToggled: true,
-        toggle: (val) => {
-            set({ isToggled: val })
-        }
-    }
-})
+  return {
+    section: Section.user,
+    changeSection: (val: Section) => {
+      set({ section: val });
+    },
+  };
+});
