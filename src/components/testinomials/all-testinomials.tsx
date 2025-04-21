@@ -2,6 +2,7 @@ import { TestimonialGrid } from "@/components/testinomials/testinomials-grid";
 import avatarImg from "../../../public/images/pic1.png";
 import logo from "../../../public/images/logo.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Testimonials() {
   const testimonials = [
@@ -22,6 +23,7 @@ export default function Testimonials() {
       ),
       size: "large" as const,
       avatarPosition: "top" as const,
+      color: "rose",
     },
     {
       quote:
@@ -30,6 +32,7 @@ export default function Testimonials() {
       username: "TRP Salon",
       avatarSrc: avatarImg,
       size: "small" as const,
+      color: "indigo",
     },
     {
       quote:
@@ -38,6 +41,7 @@ export default function Testimonials() {
       username: "Reflection Salon",
       avatarSrc: avatarImg,
       size: "medium" as const,
+      color: "indigo",
     },
     {
       quote:
@@ -46,6 +50,7 @@ export default function Testimonials() {
       username: "Clippers Cutters",
       avatarSrc: avatarImg,
       size: "small" as const,
+      color: "emerald",
     },
     {
       quote:
@@ -54,6 +59,7 @@ export default function Testimonials() {
       username: "Glow Beauty Studio",
       avatarSrc: avatarImg,
       size: "small" as const,
+      color: "slate",
     },
     {
       quote:
@@ -62,12 +68,9 @@ export default function Testimonials() {
       username: "Urban Groomers",
       avatarSrc: avatarImg,
       size: "large" as const,
+      color: "sky",
     },
   ];
 
-  return (
-    <main>
-      <TestimonialGrid testimonials={testimonials} />
-    </main>
-  );
+  return <TestimonialGrid testimonials={testimonials} />;
 }
