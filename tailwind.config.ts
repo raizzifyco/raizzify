@@ -1,18 +1,18 @@
-import type { Config } from "tailwindcss"
-const defaultTheme = require('tailwindcss/defaultTheme')
+import type { Config } from "tailwindcss";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
     screens: {
-      'xs': '450px',
+      xs: "450px",
       ...defaultTheme.screens,
     },
     container: {
@@ -25,8 +25,9 @@ const config = {
     extend: {
       fontFamily: {
         "space-grotesk": "var(--font-space-grotesk)",
-        "manrope": "var(--font-manrope)",
-        "cabin": "var(--font-cabin)",
+        manrope: "var(--font-manrope)",
+        cabin: "var(--font-cabin)",
+        jakarta: ["var(--font-plus-jakarta)"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -94,6 +95,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
