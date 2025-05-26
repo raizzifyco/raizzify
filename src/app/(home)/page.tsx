@@ -10,7 +10,7 @@ import ScreenFour from "@/components/screens/s4";
 
 export default function Home() {
   const { section } = useToggle();
-
+  
   //UNCOMMENT TO SEE NEW SCREENS
   // return (
   //   <div>
@@ -20,7 +20,6 @@ export default function Home() {
   //     <ScreenFour />
   //   </div>
   // );
-
   switch (section) {
     case Section.user:
       return <UserSection />;
