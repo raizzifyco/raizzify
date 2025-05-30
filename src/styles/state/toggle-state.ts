@@ -12,7 +12,7 @@ interface ToggleState {
 }
 export const useToggle = create<ToggleState>((set) => {
   return {
-    section: Section.user,
+    section: Section.partner,
     changeSection: (val: Section) => {
       set({ section: val });
     },

@@ -1,31 +1,31 @@
 import { useGSAP } from "@gsap/react"
 import { useRef } from "react"
 import gsap from "gsap"
-import img1 from '../../../public/images/owners/benefits/start-img1.png'
-import img2 from '../../../public/images/owners/benefits/start-img2.png'
-import img3 from '../../../public/images/owners/benefits/start-img3.png'
+import img1 from '../../../public/images/partner/Benefit_1.svg'
+import img2 from '../../../public/images/partner/Benefit_2.svg'
+import img3 from '../../../public/images/partner/Benefit_3.svg'
 import StartedCard from "./started-card"
 
 const cardData = [
     {
         imageUrl: img3,
-        heading: "Coins",
-        title: "Help Your Customers Earn Cash Benefits",
-        description: "For each service taken by the customer at your salon through the app, we provide them vouchers which they can redeem with local partners.",
+        
+        title: "Get Deep Business Insights",
+        description: "See how your customers behave and what keeps them coming back.Make smarter decisions with complete business analytics.",
         top: "top-28"
     },
     {
         imageUrl: img2,
-        heading: "Experience",
-        title: "Give Your Customers An Experience",
-        description: "Enhance customer visits with personalized touches and exceptional care, making the salon they are familiar with - more accessible.",
+  
+        title: "Track Discount and Revisit Performance",
+        description: "Know what works—analyze how your discounts are converting.Measure the impact of revisit offers and optimize for results.",
         top: "top-20"
     },
     {
         imageUrl: img1,
-        heading: "Growth",
-        title: "Increase your visibility",
-        description: "Stay ahead with powerful features designed to grow your salon, tools to attract new clients and keep them coming back.",
+     
+        title: "Join a 150+ Brand Network",
+        description: "Become part of a trusted, city-wide network of premium businesses.Boost your visibility and climb to the top of your city’s brand list.",
         top: "top-10"
     }
 ];
@@ -64,11 +64,11 @@ const GetStarted = () => {
                     {cardData.map((card, index) => (
                         <div
                             key={index}
-                            className={`card-${index + 1} w-full h-[70%] bg-cardBgColor shadow-lg absolute ${card.top} left-0 right-0 rounded-xl px-14`}
+                            className={`card-${index + 1} w-full h-[70%] bg-gradient-to-br from-[#59E5CE] to-[#FCFDF8]  shadow-lg absolute ${card.top} left-0 right-0 rounded-xl px-14`}
                         >
                             <StartedCard
                                 imageUrl={card.imageUrl}
-                                heading={card.heading}
+                               
                                 title={card.title}
                                 description={card.description}
                             />
@@ -84,7 +84,7 @@ const GetStarted = () => {
                     {
                         cardData.map((card, i) => (
                             <div key={i} className="px-6 py-6 bg-cardBgColor rounded-lg">
-                                <StartedCard imageUrl={card.imageUrl} heading={card.heading} title={card.title} description={card.description} />
+                                <StartedCard imageUrl={card.imageUrl}  title={card.title} description={card.description} />
                             </div>
                         ))
                     }
