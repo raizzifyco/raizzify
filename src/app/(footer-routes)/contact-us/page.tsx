@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ContactUs = () => {
   const date = new Date();
   return (
@@ -24,7 +26,7 @@ const ContactUs = () => {
     rel="noopener noreferrer"
     className="transition transform hover:scale-105"
   >
-    <img
+    <Image
       src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"
       alt="WhatsApp"
     />
@@ -35,7 +37,7 @@ const ContactUs = () => {
     href="mailto:nikhil.raizada@raizzify.com"
     className="transition transform hover:scale-105"
   >
-    <img
+    <Image
       src="https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red"
       alt="Gmail"
     />
