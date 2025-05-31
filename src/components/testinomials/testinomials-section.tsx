@@ -19,7 +19,7 @@ const Testimonial = ({
 }: TestimonialProps) => {
   return (
     <div className={cn("bg-white rounded-xl p-6 shadow-sm", className)}>
-      <p className="text-gray-700 mb-4 text-sm md:text-base">"{quote}"</p>
+      <p className="text-gray-700 mb-4 text-sm md:text-base"> {`"${quote}"`}</p>
       <div className="flex items-center gap-3">
         <Avatar className="h-10 w-10 border border-purple-100">
           <AvatarImage src={avatarSrc || "/placeholder.svg"} alt={name} />
@@ -66,7 +66,7 @@ const CompanyTestimonial = ({
         </div>
         {companyLogo}
       </div>
-      <p className="text-gray-700 text-sm md:text-base">"{quote}"</p>
+      <p className="text-gray-700 text-sm md:text-base"> {`"${quote}"`}</p>
     </div>
   );
 };

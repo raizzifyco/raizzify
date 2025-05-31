@@ -80,7 +80,7 @@ export function TestimonialCard({
       )}
 
       <p className="text-gray-700 mb-4 text-sm md:text-base flex-grow">
-        "{quote}"
+        {`"${quote}"`}
       </p>
 
       {avatarPosition === "bottom" && (
