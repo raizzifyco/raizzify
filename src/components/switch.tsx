@@ -14,9 +14,9 @@ const Switch = () => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center font-manrope">
-      <div className="bg-[#E7F8FB] grid grid-cols-3 p-1 rounded-[50px] h-14 w-[420px]">
-        <div
+    <div className="w-full flex  items-center justify-center font-manrope">
+      <div className="bg-[#edf2f3] grid grid-cols-2 p-1 rounded-[50px] h-14 w-[420px]">
+        {/* <div
           onClick={() => handleToggleChange(Section.user)}
           className={`h-full cursor-pointer rounded-[48px] flex items-center justify-center ${
             section === Section.user && "bg-primary"
@@ -27,9 +27,9 @@ const Switch = () => {
               section === Section.user ? "text-white" : "text-[#6A6A6A]"
             }`}
           >
-            Salon Users
+                Salon  customer
           </p>
-        </div>
+        </div> */}
         <div
           onClick={() => handleToggleChange(Section.partner)}
           className={`h-full cursor-pointer rounded-[48px] flex items-center justify-center ${

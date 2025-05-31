@@ -1,5 +1,4 @@
 import { ownerTestimonials } from "@/lib/testimonials-data";
-import Hero from "./hero";
 import Choose from "./owners/choose";
 import GetStarted from "./owners/get-started";
 import CustomerSay from "./users/customer-say";
@@ -9,6 +8,11 @@ import ownerDownload from "../../public/images/owners/owner-download.png";
 import qrAndroid from "../../public/images/owners/owner-android.png";
 import qrIos from "../../public/images/owners/owner-ios.png";
 import Testimonials from "./testinomials/all-testinomials";
+import Hero from "./partner/hero";
+import Features from "./partner/features";
+// 'import Benefit  from "./partner/benefit";
+import Image from "next/image";
+
 const PartnerSection = () => {
   return (
     <main className="home overflow-x-hidden overflow-y-hidden font-manrope">
@@ -16,7 +20,7 @@ const PartnerSection = () => {
         <Hero />
       </section>
       <section id="features">
-        <Choose />
+        <Features />
       </section>
       <section id="benefits">
         <GetStarted />

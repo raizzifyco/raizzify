@@ -10,7 +10,7 @@ import qrAndroid from '../../public/images/owners/owner-android.png'
 import qrIos from '../../public/images/owners/owner-ios.png'
 const OwnerSection = () => {
     return (
-        <main className="home overflow-x-hidden overflow-y-hidden font-manrope">
+        <main className=" overflow-x-hidden overflow-y-hidden font-manrope">
             <section id="hero">
                 <Hero />
             </section>
