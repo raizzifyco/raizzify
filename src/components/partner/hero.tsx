@@ -7,7 +7,7 @@ import Switch from "../switch";
 
 const Hero = () => {
   return (
-     <div className="flex hero flex-col">
+     <div className="flex hero flex-col md:justify-center items-center">
       <Switch />
       <div className="relative grid grid-cols-1 gap-1 md:gap-0 md:grid-cols-3 md:h-[90vh] h-[215vh]">
         <div

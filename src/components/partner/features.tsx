@@ -5,7 +5,7 @@ import Feature3 from "../../../public/images/partner/features_3.svg";
 const Features = () => {
   return (
     <div>
-      <div className="flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-[#FCFDF8] to-[#59E5CE] pl-6 pb-10">
+      <div className="flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-[#FCFDF8] to-[#59e5ce] pl-6 pb-10">
         <div className="flex justify-end w-full md:hidden mb-6">
           <Image alt="Features1" src={Features1} width={300} height={300} />
         </div>

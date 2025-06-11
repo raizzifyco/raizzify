@@ -3,7 +3,7 @@ import Choose from "./owners/choose";
 import GetStarted from "./owners/get-started";
 import CustomerSay from "./users/customer-say";
 import Faq from "./faq";
-import DownloadComp from "./users/user-download";
+//import DownloadComp from "./users/user-download";
 import ownerDownload from "../../public/images/owners/owner-download.png";
 import qrAndroid from "../../public/images/owners/owner-android.png";
 import qrIos from "../../public/images/owners/owner-ios.png";
@@ -12,6 +12,7 @@ import Hero from "./partner/hero";
 import Features from "./partner/features";
 // 'import Benefit  from "./partner/benefit";
 import Image from "next/image";
+import DownloadComp from "./partner/downloadcomp";
 
 const PartnerSection = () => {
   return (
@@ -31,14 +32,19 @@ const PartnerSection = () => {
       <section id="faqs">
         <Faq />
       </section>
-      <section id="download">
+      {/* <section id="download">
         <DownloadComp
           qrImageAndroid={qrAndroid}
           qrImageIos={qrIos}
           gradientTitle={"RAIZZIFY BUSINESS"}
           image={ownerDownload}
         />
+      </section> */}
+      <section id="download">
+        <DownloadComp />
+
       </section>
+
     </main>
   );
 };

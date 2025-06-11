@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 const ContactUs = () => {
+  
   const date = new Date();
   return (
     <div className="flex items-center justify-center min-h-screen py-14 font-manrope">
@@ -8,7 +9,9 @@ const ContactUs = () => {
         <p className="text-sm font-light">Last Updated on {date.getDate()}</p>
         <h1 className="text-4xl font-semibold text-primaryTextColor">
           Contact Us
+
         </h1>
+        
 
         <div className="flex flex-col gap-y-10 text-muted-foreground font-light">
           {/* <p>We, the Inception Collective, and its subsidiaries and affiliates (collectively, “Inception Collective”,”IC”, “us,” or “we”) understand that your privacy is important to you. We are committed to respecting your privacy and protecting your personal data. This privacy notice describes how we handle and protect your personal data (the “Privacy Notice”) when we collect it through Inception Collectives websites, applications, and digital assets (collectively, our “Sites”) and through our externally facing business activities, such as service offerings, events, surveys, and communications, when we interact with you and collect data from you for use by and on behalf of Inception Collective (i.e., when IC is acting as a data controller or similar term under applicable privacy law).</p> */}
@@ -20,30 +23,34 @@ const ContactUs = () => {
             11 Rani Govind Nagar, Mandsaur, Madhya Pradesh, PIN: 458001
             <div className="flex flex-col md:flex-row items-center gap-4 mt-6">
   
+ 
+<div className="flex gap-7">
   <a
     href="https://wa.me/9340151678"
     target="_blank"
     rel="noopener noreferrer"
-    className="transition transform hover:scale-105"
+    className="transition transform hover:scale-150"
   >
     <Image
       src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"
       alt="WhatsApp"
+      width={110}
+      height={40}
     />
   </a>
 
-  
   <a
     href="mailto:nikhil.raizada@raizzify.com"
-    className="transition transform hover:scale-105"
+    className="transition transform hover:scale-150"
   >
     <Image
       src="https://img.shields.io/badge/Gmail-333333?style=for-the-badge&logo=gmail&logoColor=red"
       alt="Gmail"
+      width={100}
+      height={20}
     />
   </a>
 </div>
-
           </div>
 
           {/* 
@@ -59,8 +66,9 @@ const ContactUs = () => {
                     <p>Please see our terms of use for more information about other terms and policies applicable to the use of our Sites.</p> */}
         </div>
 
-        <div></div>
+       
       </div>
+    </div>
     </div>
   );
 };

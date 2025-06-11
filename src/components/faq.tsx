@@ -10,7 +10,7 @@ import pic1 from '../../public/images/pic1.png'
 import pic2 from '../../public/images/pic2.png'
 import pic3 from '../../public/images/pic3.png'
 import Image from 'next/image';
-import { useToggle } from '@/styles/state/toggle-state';
+import { Section, useToggle } from '@/styles/state/toggle-state';
 
 const customerFaqs = [
     {
@@ -66,10 +66,55 @@ const ownerFaqs = [
     },
 ];
 
+const partnerFaqs = [
+    {
+        title: " How do I join the platform?",
+        content: "Joining the platform is as easy as it can get, you just need to download the Raizzify app from App Store/Play Store and then buy a membership.",
+    },
+    {
+        title: "What are the benefits of the membership?",
+        content:(
+    <>
+      <p>As a Raizzify partner, you’ll gain:</p>
+      <ul className="list-disc list-inside">
+        <li>Access to 40+ business categories for cross-industry exposure</li>
+        <li>Smart coupon integration to drive customer action and repeat visits</li>
+        <li>Visibility within a network of 150+ trusted brands</li>
+        <li>Tools to increase average order value through bill-linked rewards</li>
+        <li>Deep business insights and analytics to optimize performance</li>
+        <li>Recognition as a premium player in your city’s ecosystem</li>
+      </ul>
+    </>
+  ),
+
+    },
+    {
+        title: "How do I update the details of my salon?",
+        content: "You can update your business information (timings, staff, photos, contact details, etc.) directly from your Partner Dashboard. For guided support, contact your assigned Raizzify Manager or reach out via the support chat.",
+    },
+    {
+        title: "How do I access my revenue reports?",
+        content: "Revenue and performance analytics are available in your dashboard under the ‘Reports & Insights’ tab. You can filter by date, offer type, and revisit frequency to get actionable data and track real-time results.",
+    },
+    {
+        title: "How do I create a new discount offer?",
+        content: "Go to your Partner Dashboard and select the ‘Create Offer’ section. Choose your offer type (e.g., percentage discount, freebie, cross-brand reward) and set the terms. You can also request assistance from our strategy team to optimize the offer.",
+    },
+    {
+        title: "How do I contact customer support?",
+        content: <>
+        <p>You can reach us through</p>
+        <li><a href="https://wa.me/7880096649?text=Hello">WhatsApp Support Line: [7880096649]</a></li>
+        <li><a href="mailto:nikhil.raizada@raizzify.com">Email: support@raizzify.com </a></li>
+        
+        </>,
+    },
+];
+
 const Faq = () => {
 
-    const { isToggled } = useToggle()
-    const faqs = isToggled ? customerFaqs : ownerFaqs
+    const { section } = useToggle()
+    const faqs = section === Section.user ? customerFaqs : section === Section.salon ? ownerFaqs :partnerFaqs
     
     return (
         <div className="my-14 flex flex-col items-center sm:px-14 px-6">
@@ -96,8 +141,8 @@ const Faq = () => {
                 </div>
                 <h1 className='font-semibold text-lg'>Still have questions?</h1>
                 <p className='text-center'>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
-                <Button className='mt-2'>
-                    Get in touch
+               <Button className='mt-2'>
+                  <a target="_blank" href="https://wa.me/7880096649?text=Hello">Get in touch</a>  
                 </Button>
             </div>
         </div>
