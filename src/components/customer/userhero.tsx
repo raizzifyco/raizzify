@@ -34,7 +34,7 @@ const UserHero = () => {
         </div>
 
       
-        <div className="absolute top-[25%] w-full flex justify-center">
+        <div className="absolute md:top-[25%] top-[30%] w-full flex justify-center">
           <div className="text-[40px] md:text-[80px] lg:text-[105px] tracking-[4px] md:tracking-[10px] text-center font-extrabold bg-gradient-to-r drop-shadow-lg from-[#3fb59d] to-[#405E59] bg-clip-text text-transparent leading-tight">
             RAIZZIFY
           </div>
