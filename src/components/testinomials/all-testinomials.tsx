@@ -8,9 +8,9 @@ export default function Testimonials() {
   const testimonials = [
     {
       quote:
-        "Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.",
-      name: "Brenna Goyette",
-      username: "@brennagoyette",
+        "With Raizzify, we've tapped into an audience we never expected—from gym-goers to salon customers. Their smart coupons have brought in more footfall. It’s like cross-marketing made effortless.",
+      name: "Suto Cafe",
+      username: "@suto_cafe",
       avatarSrc: avatarImg,
       companyLogo: (
         <Image
@@ -27,48 +27,66 @@ export default function Testimonials() {
     },
     {
       quote:
-        "We just got Raizzify for our salon and we love it! It's easy to use for bookings and setting up services. We're excited that it might help us sell more products too. Can't wait to see how it grows our business!",
-      name: "Mr. Abhishek",
-      username: "TRP Salon",
+        "Eyewear is a need-based product, But with Raizzify, new customers attract—either to redeem rewards or earn new ones.",
+      name: " Monica Opto Hub",
+      username: "monica_O_hub",
       avatarSrc: avatarImg,
       size: "small" as const,
       color: "indigo",
     },
     {
       quote:
-        "Our salon is pretty new, and we wanted something to help us stand out. Raizzify looks perfect for us! It's easy for appointments and lets customers buy our products too. We think this will really help our business grow!",
-      name: "Ms. Shweta",
-      username: "Reflection Salon",
+        "Being part of a network of 150+ brands has boosted our credibility. People now see Raghavam not just as a standalone store, but part of a bigger, trusted ecosystem—and that makes a huge difference in how they choose to shop.",
+      name: "Raghavam",
+      username: "@raghavam",
       avatarSrc: avatarImg,
       size: "medium" as const,
       color: "indigo",
     },
     {
       quote:
-        "We just started Raizzify for our salon. It's easy to use, even for us who aren't great with computers. We love how it handles bookings and also let us sell our products on the app. Can't wait to see how our customers like it!",
-      name: "Mr. Shahrukh",
-      username: "Clippers Cutters",
+        "We’ve seen a spike in our average bill value. Customers now aim for higher spends just to unlock better coupons. Raizzify gamifies the experience in a way that benefits both the customer and us—it’s brilliant!",
+      name: "SIS BRO SALON",
+      username: "sis&bro",
       avatarSrc: avatarImg,
       size: "small" as const,
       color: "emerald",
     },
     {
       quote:
-        "Raizzify has been a game changer for our studio! The booking process is smooth, and our clients love the convenience of purchasing products directly through the app. It has definitely helped us increase our revenue.",
-      name: "Ms. Priyanka",
-      username: "Glow Beauty Studio",
+        "Raizzify’s revisit performance tracker gives us clarity—what’s working, what’s not, and how we can get better.",
+      name: "AURA SALON",
+      username: "aura_salon",
       avatarSrc: avatarImg,
       size: "small" as const,
       color: "slate",
     },
     {
       quote:
-        "Using Raizzify has made managing our salon so much easier. Our clients find it simple to book appointments, and we’ve seen a boost in product sales since integrating with the app. We're thrilled with the results!",
-      name: "Mr. Rahul",
-      username: "Urban Groomers",
+        "Raizzify has changed the way we retain members. When people get rewards they can use at their favorite cafes or salons just by joining our gym, it creates real value. We’re not just selling fitness anymore—we’re offering a lifestyle.",
+      name: "Jerai Fitness – The Fitness Lounge",
+      username: "fitness",
       avatarSrc: avatarImg,
       size: "large" as const,
       color: "sky",
+    },
+    {
+      quote:
+       "Earlier, our promotions ended with a bill. Now, they continue as an experience. Raizzify’s smart coupons keep our brand alive in the customer’s mind—even after they walk out of our store. That’s powerful.",
+      name: "Bake n Shake",
+      username: "bake_n_shake",
+      avatarSrc: avatarImg,
+      size: "large" as const,
+      color: "sky",
+    },
+   {
+      quote:
+       "We didn’t think a car wash business could benefit from something like Raizzify—but we were wrong. It's helped turn a routine service into something people actually look forward to.",
+      name: "High Octane Car Wash",
+      username: "car_wash",
+      avatarSrc: avatarImg,
+      size: "small" as const,
+      color: "slate",
     },
   ];
 
