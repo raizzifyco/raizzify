@@ -15,7 +15,7 @@ const Hero = () => {
             "relative flex flex-col md:justify-center items-center  bg-gradient-to-b from-[#FCFDF8] to-[#59E5CE]"
           }
         >
-          <Image alt={"Hero1"} src={Hero1} />
+          <Image alt={"Hero1"} src={Hero1}  loading="lazy"/>
           <div className="mb-10 text-center font-bold">
             GET NEW <br />
             CUSTOMERS
@@ -27,7 +27,7 @@ const Hero = () => {
           }
         >
           <div className="left-70 h-150 w-96 object-contain">
-            <Image alt={"Hero3"} src={Hero3} />
+            <Image alt={"Hero3"} src={Hero3} loading="lazy"/>
           </div>
           <div className="text-center bottom-2 font-bold ">
             GET INCREASED
@@ -40,7 +40,7 @@ const Hero = () => {
           }
         >
           <div className="md:pt-24 pt-4">
-            <Image alt={"Hero2"} src={Hero2} />
+            <Image alt={"Hero2"} src={Hero2} loading="lazy"/>
           </div>
         </div>
         <div
@@ -49,7 +49,7 @@ const Hero = () => {
           }
         >
           <div className="left-70 h-150 w-96 object-contain">
-            <Image alt={"Hero3"} src={Hero3} />
+            <Image alt={"Hero3"} src={Hero3} loading="lazy"/>
           </div>
           <div className="text-center bottom-2 font-bold ">
             GET INCREASED

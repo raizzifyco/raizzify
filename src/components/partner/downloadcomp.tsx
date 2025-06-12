@@ -17,6 +17,7 @@ const DownloadComp = () => {
             alt="Whatsapp"
             src={Whatsapp}
             width={130}
+            loading="lazy"
             
           />
         </a>
@@ -28,6 +29,7 @@ const DownloadComp = () => {
             alt="Gmail"
             src={Gmail}
             width={180}
+            loading="lazy"
             
           />
         </a>
@@ -41,7 +43,8 @@ const DownloadComp = () => {
             src={Linkdin}
             width={130}
             className="hover:scale-110 transition-transform "
-          />{" "}
+            loading="lazy"
+          />
         </a>
       </div>
     </div>

@@ -15,7 +15,7 @@ const UserHero = () => {
             src={Hero5}
             alt="Hero5"
             className="w-full h-auto object-contain"
-            priority
+            loading="lazy"
           />
         </div>
 
@@ -55,14 +55,14 @@ const UserHero = () => {
               target="_blank"
               className="hover:scale-110 transition"
             >
-              <Image alt="App Store" src={Hero6} width={120} height={40} />
+              <Image alt="App Store" src={Hero6} width={120} height={40} loading="lazy"/>
             </a>
             <a
               href="https://play.google.com/store/apps/details?id=com.raizzify.hercules&hl=en_IN&pli=1"
               target="_blank"
               className="hover:scale-110 transition"
             >
-              <Image alt="Google Play" src={Hero7} width={120} height={40} />
+              <Image alt="Google Play" src={Hero7} width={120} height={40} loading="lazy"/>
             </a>
           </div>
         </div>

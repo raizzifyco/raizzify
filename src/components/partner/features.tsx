@@ -7,7 +7,7 @@ const Features = () => {
     <div>
       <div className="flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-[#FCFDF8] to-[#59e5ce] pl-6 pb-10">
         <div className="flex justify-end w-full md:hidden mb-6">
-          <Image alt="Features1" src={Features1} width={300} height={300} />
+          <Image alt="Features1" src={Features1} width={300} height={300} loading="lazy"/>
         </div>
 
         <div className="flex flex-col items-start text-center md:text-left md:items-start gap-4 md:pl-20 md:w-1/2">
@@ -24,7 +24,7 @@ const Features = () => {
         </div>
 
         <div className="hidden md:flex justify-center">
-          <Image alt="Features1" src={Features1} width={550} height={550} />
+          <Image alt="Features1" src={Features1} width={550} height={550} loading="lazy"/>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ const Features = () => {
 >
   
   <div className="md:w-1/2 w-full flex justify-center md:justify-start px-1 md:px-0">
-    <Image alt="Feature2" src={Feature2} />
+    <Image alt="Feature2" src={Feature2} loading="lazy"/>
   </div>
 
   
