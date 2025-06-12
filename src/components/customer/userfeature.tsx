@@ -23,6 +23,7 @@ const UserFeatures = () => {
           width={600}
           height={100}
           className="w-full max-w-md mb-6 md:mb-0 rounded-full"
+          loading="lazy"
         />
 
         <div className="text-center md:text-left md:pl-16 md:w-1/2">
