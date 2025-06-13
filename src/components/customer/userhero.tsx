@@ -1,17 +1,17 @@
 "use client";
 import 'animate.css';
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Hero5 from "../../../public/images/user1/img1.svg";
 import Hero6 from "../../../public/images/user1/appstore.svg";
 import Hero7 from "../../../public/images/user1/google.svg";
 import Switch from "../switch";
 
-
 const UserHero = () => {
+  // UseMemo prevents warnings and unnecessary re-creation
+  const words = useMemo(() => ["One Visit. Endless Returns."], []);
+  const wordList = useMemo(() => ["RAIZZIFY"], []);
 
-  
-  const words = ["One Visit. Endless Returns."];
   const [text, setText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -36,10 +36,8 @@ const UserHero = () => {
     }, 200);
 
     return () => clearTimeout(timeout);
-  }, [charIndex, isDeleting, wordIndex]);
+  }, [charIndex, isDeleting, wordIndex, words]);
 
- 
-  const wordList = ["RAIZZIFY"];
   const [texts, setTexts] = useState("");
   const [wordIndexs, setWordIndexs] = useState(0);
   const [charIndexs, setCharIndexs] = useState(0);
@@ -64,14 +62,14 @@ const UserHero = () => {
     }, 300);
 
     return () => clearTimeout(timeout);
-  }, [charIndexs, isDeletings, wordIndexs]);
+  }, [charIndexs, isDeletings, wordIndexs, wordList]);
 
   return (
     <div>
       <Switch />
       <div className="relative flex flex-col items-center justify-center bg-gradient-to-l from-[#F4E4A5] to-[#59E5CE] min-h-screen px-4 md:px-10 py-10">
         
-        <div className= "w-full max-w-screen-xl" >
+        <div className="w-full max-w-screen-xl">
           <Image
             src={Hero5}
             alt="Hero5"
@@ -81,7 +79,7 @@ const UserHero = () => {
         </div>
 
         <div className="absolute top-4 w-full flex justify-center">
-          <div className="animate__animated animate__shakeY  animate__repeat-2  text-center text-[#416660] text-sm md:text-lg font-extrabold">
+          <div className="animate__animated animate__shakeY animate__repeat-2 text-center text-[#416660] text-sm md:text-lg font-extrabold">
             By Team of IITians and ISBians
           </div>
         </div>
