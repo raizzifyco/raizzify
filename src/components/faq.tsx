@@ -14,29 +14,29 @@ import { Section, useToggle } from '@/styles/state/toggle-state';
 
 const customerFaqs = [
     {
-        title: "How do I join the platform?",
-        content: "Joining the platform is as easy as it can get, you just need to download the Raizzify app from App Store/Play Store and then create an account.",
+        title: "How do I download Raizzify?",
+        content: "Just head to the Play Store (Android) or App Store (iOS), search for Raizzify, and hit Download. It's quick and free!",
     },
     {
-        title: "How do I select a specific stylist or barber?",
-        content: "There is a custom booking option via which you could choose your preferred stylist or barber while scheduling an appointment.",
+        title: "How do I apply coupons?",
+        content: "Simply pay through Raizzify using your favorite UPI gateway like Paytm, GPay, PhonePe, etc. Your eligible coupons will be applied or credited automatically.",
     },
     {
-        title: "How do I reschedule my appointment and cancel booking?",
-        content: "Although there is no option to reschedule an appointment yet, but you can still cancel your appointment and again schedule a new appointment.",
+        title: " How can I get more coupons?",
+        content: "The more you use Raizzify, the more you earn! Just keep doing transactions through the app and get fresh coupons every time.",
     },
     {
-        title: "How do I find available discounts?",
-        content: "Discounts could be intriguing, to get one just go through the feed and look for a shiny banner over the salon's thumbnail to know if a discount is available.",
+        title: "What are Special Coupons and how can I get them?",
+        content: "Special Coupons offer free services or heavy discounts on select businesses. You earn them by completing transactions via Raizzify. Every payment brings you closer to one!",
     },
-    {
-        title: "Which payments methods are accepted?",
-        content: "We use RazorPay as our payment gateway, which means any method as long as it exists is available, besides this you can always choose to pay via cash.",
-    },
-    {
-        title: "How do I contact customer support?",
-        content: "If you have any technical queries, drop us a mail at 'support@raizzify.com', our team usually replies back in 48 hours.",
-    },
+    // {
+    //     title: "Which payments methods are accepted?",
+    //     content: "We use RazorPay as our payment gateway, which means any method as long as it exists is available, besides this you can always choose to pay via cash.",
+    // },
+    // {
+    //     title: "How do I contact customer support?",
+    //     content: "If you have any technical queries, drop us a mail at 'support@raizzify.com', our team usually replies back in 48 hours.",
+    // },
 ];
 
 const ownerFaqs = [

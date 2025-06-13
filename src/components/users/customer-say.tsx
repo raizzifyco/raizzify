@@ -46,9 +46,12 @@ const CustomerSay = ({ testimonials }: CustomerSayProps) => {
                     <div key={i} className='bg-cardBgColor flex flex-col justify-between gap-y-8 p-8 text-primaryTextColor mx-4 rounded-lg h-[320px]'>
                         <p className='font-medium'>{testimonial.review}</p>
                         <p className='font-bold text-lg'>{testimonial.name}</p>
+
                     </div>
+                    
                 ))}
             </Carousel>
+            
         </div>
     );
 };

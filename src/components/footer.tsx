@@ -8,7 +8,7 @@ const Footer = () => {
                     <div className="flex md:flex-row flex-col items-start gap-y-6 justify-between w-full">
                         <div className="flex items-start md:w-[20%] flex-col gap-y-2 relative">
                             <h1 className="uppercase font-bold text-[48px] text-primary font-space-grotesk z-10">RAIZZIFY</h1>
-                            <p className="text-white font-light text-sm opacity-60">Raizzify is a platform built for the salon industry to bridge the gap between salon owners and customers, bringing them together while maintaining their customers’ go-to-salon habits.</p>
+                            <p className="text-white font-light text-sm opacity-60">Raizzify, founded by a team of IITians and ISBians, is an innovation-driven platform on a mission to empower local businesses through intelligent customer engagement, digital visibility, and data-driven growth.  </p>
                         </div>
 
                         <div className="md:w-1/2 relative w-full grid md:grid-cols-3 grid-cols-2 justify-between md:gap-x-6 gap-x-20 gap-y-6">
