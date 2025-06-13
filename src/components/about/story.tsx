@@ -14,9 +14,17 @@ const Story = () => {
                         Our Story
                     </Button>
                     <h1 className="sm:text-[40px] text-[32px] leading-tight font-semibold">A Team Backed By IITians & ISBians</h1>
-                    <p className="text-muted-foreground">At Raizzify, we revolutionise salon booking by making it seamless and stress-free. Born from the idea to simplify scheduling, our app connects clients with top-rated salons and skilled stylists through an easy-to-use interface. By offering real-time availability, personalised profiles, and secure payments, we support both clients and local businesses.
+                    <p className="text-muted-foreground">Raizzify, founded by a team of IITians and ISBians, is an innovation-driven platform on a mission to empower local businesses through intelligent customer engagement, digital visibility, and data-driven growth.
+
+
                     </p>
-                    <p className="text-muted-foreground mt-4">Our commitment to enhancing the beauty experience ensures that self-care is just a tap away. Join us and discover the future of salon booking, where beauty meets convenience.
+                    <p className="text-muted-foreground mt-4">We are transforming how local brands connect with their customers by creating value at every purchase and offering tools for sustainable business growth.
+
+
+                    </p>
+                    <p className="text-muted-foreground mt-4">A curated network of 40+ premium businesses (Salons, Cafés, Boutiques, Laundry, Car Wash, Gifts, Mens wear, Saree shop, Sweet shop, Gyms, Pathology, Medicals, Cinemas  etc.), offering consumers exclusive perks and coupons while driving footfall, brand recognition, and loyalty for businesses.
+
+
                     </p>
                 </div>
             </div>
