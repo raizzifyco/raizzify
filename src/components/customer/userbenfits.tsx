@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useGSAP } from "@gsap/react";
 
-const UserFeatures = () => {
+const UserFeature = () => {
   return (
     <div className="relative">
       <div className=" sticky top-0 flex flex-col  md:flex-row-reverse justify-between items-center px-6 md:px-20 py-16 bg-gradient-to-br from-[#59e5ce] to-[#fbfbfb] h-screen ">
@@ -54,4 +54,4 @@ const UserFeatures = () => {
   );
 };
 
-export default UserFeatures;
+export default UserFeature;
