@@ -7,6 +7,7 @@ import Hero6 from "../../../public/images/user1/appstore.svg";
 import Hero7 from "../../../public/images/user1/google.svg";
 import Switch from "../switch";
 
+
 const UserHero = () => {
   // UseMemo prevents warnings and unnecessary re-creation
   const words = useMemo(() => ["One Visit. Endless Returns."], []);
@@ -69,7 +70,7 @@ const UserHero = () => {
       <Switch />
       <div className="relative flex flex-col items-center justify-center bg-gradient-to-l from-[#F4E4A5] to-[#59E5CE] min-h-screen px-4 md:px-10 py-10">
         
-        <div className="w-full max-w-screen-xl">
+        <div className= "w-full max-w-screen-xl" >
           <Image
             src={Hero5}
             alt="Hero5"
