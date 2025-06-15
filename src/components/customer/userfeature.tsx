@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Features5 from "../../../public/images/user1/img2.svg";
+
 import Features4 from "../../../public/images/user1/img3.svg";
-import Features6 from "../../../public/images/user1/img4.svg";
+
 
 
 const UserFeatures = () => {
