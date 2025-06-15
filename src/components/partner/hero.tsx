@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useEffect,useState } from "react";
 import Hero1 from "../../../public/images/partner/hero_1.svg";
 import Hero2 from "../../../public/images/partner/hero_2.svg";
 import Hero3 from "../../../public/images/partner/hero_3.svg";
@@ -6,6 +7,34 @@ import Whatsapp from "../../../public/images/partner/whatsapp.svg";
 import Switch from "../switch";
 
 const Hero = () => {
+  const wordList = ["RAIZZIFY"];
+    const [texts, setTexts] = useState("");
+    const [wordIndexs, setWordIndexs] = useState(0);
+    const [charIndexs, setCharIndexs] = useState(0);
+    const [isDeletings, setIsDeletings] = useState(false);
+  
+    useEffect(() => {
+      const currentWord = wordList[wordIndexs];
+      const timeout = setTimeout(() => {
+        const updatedText = isDeletings
+          ? currentWord.substring(0, charIndexs - 1)
+          : currentWord.substring(0, charIndexs + 1);
+  
+        setTexts(updatedText);
+        setCharIndexs((prev) => prev + (isDeletings ? -1 : 1));
+  
+        if (!isDeletings && charIndexs === currentWord.length) {
+          setIsDeletings(true);
+        } else if (isDeletings && charIndexs === 0) {
+          setIsDeletings(false);
+          setWordIndexs((prev) => (prev + 1) % wordList.length);
+        }
+      }, 300);
+  
+      return () => clearTimeout(timeout);
+    }, [charIndexs, isDeletings, wordIndexs]);
+  
+
   return (
      <div className="flex hero flex-col md:justify-center items-center">
       <Switch />
@@ -61,7 +90,7 @@ const Hero = () => {
           <div
             className="md:text-[105px] text-[50px]  tracking-[14px] text-center  font-extrabold bg-gradient-to-r drop-shadow-lg from-[#3fb59d] to-[#3ab49c] bg-clip-text text-transparent leading-normal"
           >
-            RAIZZIFY
+            {texts}
           </div>
         </div>
       </div>
