@@ -16,7 +16,7 @@ import DownloadComp from "./partner/downloadcomp";
 
 const PartnerSection = () => {
   return (
-    <main className="home overflow-x-hidden overflow-y-hidden font-manrope">
+    <main className="home font-manrope">
       <section id="hero">
         <Hero />
       </section>
