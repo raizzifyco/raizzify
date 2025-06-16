@@ -1,5 +1,5 @@
 "use client";
-import 'animate.css';
+
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Hero5 from "../../../public/images/user1/img1.svg";
@@ -79,7 +79,7 @@ const UserHero = () => {
         </div>
 
         <div className="absolute top-4 w-full flex justify-center">
-          <div className="animate__animated animate__shakeY animate__repeat-2 text-center text-[#416660] text-sm md:text-lg font-extrabold">
+          <div className="text-center text-[#416660] text-sm md:text-lg font-extrabold">
             By Team of IITians and ISBians
           </div>
         </div>
