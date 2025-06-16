@@ -14,7 +14,7 @@ import Testimonials from "./user-testimonial/all-testimonials"
 import UserBenefits from "./customer/userbenfits"
 const UserSection = () => {
     return (
-        <div className="font-manrope">
+        <div className="font-manrope ">
             <section id="user-hero">
                 <UserHero />
             </section>
