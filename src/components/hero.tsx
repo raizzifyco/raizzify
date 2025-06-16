@@ -95,7 +95,7 @@ const Hero = () => {
     gsap.to(window, { duration: 1, scrollTo: `#features` });
   };
   return (
-    <div className="flex hero flex-col justify-center items-center py-1 ">
+    <div className="flex hero flex-col justify-center items-center py-1">
       <Switch />
       <div className="flex flex-col items-center  w-full gap-y-8">
         <div className="font-bold lg:text-[56px] whitespace-nowrap sm:text-[38px] xs:text-[30px] text-[26px] md:px-0 px-6 md:w-3/4 w-full text-center md:leading-relaxed">
