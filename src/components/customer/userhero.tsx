@@ -98,7 +98,7 @@ const UserHero = () => {
 
         <div className="absolute bottom-28 sm:bottom-24 w-full flex justify-center">
           <button className="rounded-full border border-black bg-white py-2 px-6 md:px-10 text-sm md:text-base font-semibold hover:scale-105 transition">
-            Download Raizzfy Now
+            Download Raizzify Now
           </button>
         </div>
 
