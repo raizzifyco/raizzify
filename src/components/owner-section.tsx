@@ -29,6 +29,7 @@ const OwnerSection = () => {
             <section id="faqs">
                 <Faq />
             </section>
+            
             <section id="download">
                 <DownloadComp qrImageAndroid={qrAndroid} qrImageIos={qrIos} gradientTitle={"RAIZZIFY BUSINESS"} image={ownerDownload} />
             </section>

@@ -62,6 +62,13 @@ const Navbar = () => {
               {isToggled ? "Book Now" : "Get Started"}
             </Button>
           } */}
+
+
+          {/* <div>
+            <div className="">
+              <Button className="hover:bg-sky-700">Blog</Button>
+            </div>
+          </div> */}
         </nav>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger>
