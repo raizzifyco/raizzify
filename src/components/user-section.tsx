@@ -5,7 +5,7 @@ import Experience from "./users/experience"
 import CustomerSay from "./users/customer-say"
 import DownloadComp from "./users/user-download"
 import Faq from "./faq"
-import userDownload from '../../public/images/user/phone.png'
+import userDownload from '../../public/images/user/phones.png'
 import qrAndroid from '../../public/images/user/user-android.png'
 import qrIos from '../../public/images/user/user-ios.png'
 import UserHero from "./customer/userhero"
