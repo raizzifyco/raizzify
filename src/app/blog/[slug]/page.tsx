@@ -4,9 +4,9 @@ import imageUrlBuilder from "@sanity/image-url";
 
 const builder = imageUrlBuilder(client);
 
-export function urlFor(source: any) {
+export const urlFor = (source: any) => {
   return builder.image(source);
-}
+};
 
 interface BlogPost {
   _id: string;
@@ -66,9 +66,12 @@ const components: PortableTextComponents = {
 };
 
 export async function generateStaticParams() {
-  const slugs = await client.fetch(
-    `*[_type == "post"]{ "slug": slug.current }`
-  );
+  const slugs = await client.fetch(`
+    *[_type == "post" && defined(slug.current)]{
+      "slug": slug.current
+    }
+  `);
+
   return slugs.map((s: { slug: string }) => ({ slug: s.slug }));
 }
 

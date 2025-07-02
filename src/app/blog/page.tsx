@@ -15,18 +15,23 @@ interface BlogPost {
 
 export default async function BlogPage() {
   const posts: BlogPost[] = await client.fetch(`
-    *[_type == "post"] | order(publishedAt desc){
-      _id,
-      title,
-      slug,
-      publishedAt,
-      mainImage {
-        asset->{
-          url
-        }
+  *[
+    _type == "post" &&
+    defined(slug.current) &&
+    publishedAt != null &&
+    publishedAt != ""
+  ] | order(publishedAt desc){
+    _id,
+    title,
+    slug,
+    publishedAt,
+    mainImage {
+      asset->{
+        url
       }
     }
-  `);
+  }
+`);
 
   return (
     <div className="min-h-screen bg-[#f1f3f6] py-16 px-6 sm:px-10">
