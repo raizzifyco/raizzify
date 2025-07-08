@@ -67,7 +67,7 @@ const components: PortableTextComponents = {
 
 export async function generateStaticParams() {
   const slugs = await client.fetch(`
-    *[_type == "post" && defined(slug.current)]{
+    *[_type == "post"]{
       "slug": slug.current
     }
   `);
@@ -103,8 +103,8 @@ export default async function BlogPostPage({
   const mainImgUrl = post.mainImage?.asset?.url;
 
   return (
-    <div className="min-h-screen bg-[#f1f3f6] py-14 px-4 sm:px-6 md:px-10">
-      <div className="max-w-3xl mx-auto bg-[#f1f3f6] p-6 md:p-10 rounded-3xl shadow-[inset_6px_6px_16px_#d1d9e6,inset_-6px_-6px_16px_#fff]">
+    <div className="min-h-screen bg-[#ffffff] px-4 sm:px-6 md:px-10">
+      <div className="max-w-3xl mx-auto bg-[#ffffff] p-6 md:p-10 ">
         {mainImgUrl && (
           <div className="relative w-full max-w-2xl mx-auto aspect-video overflow-hidden rounded-xl my-8 shadow-[inset_4px_4px_10px_#d1d9e6,inset_-4px_-4px_10px_#fff]">
             <img

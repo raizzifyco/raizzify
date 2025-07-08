@@ -59,7 +59,7 @@ const DownloadComp = ({ gradientTitle, image, qrImageAndroid, qrImageIos }: Down
       </div>
 
       <div className={cn(`bg-white  relative md:min-h-[60vh] sm:min-h-[53vh] xs:min-h-[41vh] min-h-[32vh]`)}>
-        <Image src={image} className={cn(`absolute left-1/2 -translate-x-[40%] -translate-y-[40%] md:max-w-[450px] sm:max-w-[400px] xs:max-w-[350px] max-w-[280px]`)} alt='' />
+        <Image src={image} className={cn(`absolute md:top-9 top-0 left-1/2 -translate-x-[40%] -translate-y-[40%] md:max-w-[450px] sm:max-w-[400px] xs:max-w-[350px] max-w-[280px] `)} alt='' />
       </div>
 
 
