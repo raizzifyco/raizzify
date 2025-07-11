@@ -1,12 +1,6 @@
-import { client } from "@/lib/sanity";
+import { client, urlFor } from "@/lib/sanity";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import imageUrlBuilder from "@sanity/image-url";
 
-const builder = imageUrlBuilder(client);
-
-export const urlFor = (source: any) => {
-  return builder.image(source);
-};
 
 interface BlogPost {
   _id: string;
