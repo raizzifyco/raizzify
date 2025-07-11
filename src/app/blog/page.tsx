@@ -1,7 +1,7 @@
 // app/blog/page.tsx or app/(blog)/page.tsx
 import Link from "next/link";
 import { client } from "@/lib/sanity"; // ✅ Make sure this is properly set up
-
+import Image from "next/image";
 interface BlogPost {
   _id: string;
   title: string;
@@ -64,11 +64,14 @@ export default async function BlogPage() {
             >
               <div className="group bg-[#f1f3f6] rounded-3xl shadow-[inset_6px_6px_14px_#d1d9e6,inset_-6px_-6px_14px_#fff] hover:shadow-[6px_6px_12px_#d1d9e6,-6px_-6px_12px_#fff] transition-all duration-300 overflow-hidden">
                 {post.mainImage?.asset?.url && (
-                  <img
-                    src={post.mainImage.asset.url}
-                    alt={post.title}
-                    className="w-full h-[200px] object-cover object-center"
-                  />
+                 <Image
+  src={post.mainImage.asset.url}
+  alt={post.title}
+  width={600}
+  height={400}
+  className="w-full h-[200px] object-cover object-center"
+/>
+
                 )}
                 <div className="p-5">
                   <h2 className="text-xl font-semibold text-gray-800 group-hover:text-indigo-700 transition-colors duration-200">

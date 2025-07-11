@@ -1,12 +1,6 @@
-import { client } from "@/lib/sanity";
+import { client, urlFor } from "@/lib/sanity";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import imageUrlBuilder from "@sanity/image-url";
-
-const builder = imageUrlBuilder(client);
-
-export const urlFor = (source: any) => {
-  return builder.image(source);
-};
+import Image from "next/image";
 
 interface BlogPost {
   _id: string;
@@ -36,9 +30,11 @@ const components: PortableTextComponents = {
 
       return (
         <div className="relative w-full max-w-2xl mx-auto aspect-video overflow-hidden rounded-xl my-8 shadow-[inset_4px_4px_10px_#d1d9e6,inset_-4px_-4px_10px_#fff]">
-          <img
+          <Image
             src={imageUrl}
             alt=""
+            width={1200}
+            height={675}
             className="object-contain object-center w-full h-full rounded-xl"
           />
         </div>
@@ -82,21 +78,21 @@ export default async function BlogPostPage({
 }) {
   const post: BlogPost = await client.fetch(
     `*[_type == "post" && slug.current == $slug][0]{
-    _id,
-    title,
-    slug,
-    publishedAt,
-    body,
-    mainImage {
-      asset->{
-        url
+      _id,
+      title,
+      slug,
+      publishedAt,
+      body,
+      mainImage {
+        asset->{
+          url
+        }
+      },
+      author->{
+        name,
+        image
       }
-    },
-    author->{
-      name,
-      image
-    }
-  }`,
+    }`,
     { slug: params.slug }
   );
 
@@ -107,9 +103,11 @@ export default async function BlogPostPage({
       <div className="max-w-3xl mx-auto bg-[#ffffff] p-6 md:p-10 ">
         {mainImgUrl && (
           <div className="relative w-full max-w-2xl mx-auto aspect-video overflow-hidden rounded-xl my-8 shadow-[inset_4px_4px_10px_#d1d9e6,inset_-4px_-4px_10px_#fff]">
-            <img
+            <Image
               src={mainImgUrl}
               alt={post.title}
+              width={1200}
+              height={675}
               className="object-contain object-center w-full h-full rounded-xl"
             />
           </div>
@@ -135,13 +133,15 @@ export default async function BlogPostPage({
         {post.author?.name && (
           <div className="mt-16 pt-8 border-t border-gray-300 flex items-center gap-4">
             {post.author.image?.asset?._ref ? (
-              <img
+              <Image
                 src={urlFor(post.author.image)
                   .width(64)
                   .height(64)
                   .fit("crop")
                   .url()}
                 alt={post.author.name}
+                width={64}
+                height={64}
                 className="w-14 h-14 rounded-full object-cover shadow"
               />
             ) : (
