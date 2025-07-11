@@ -3,14 +3,14 @@
   "homepage": "http://raizz-product.github.io/raizzify",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev  ",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
-  },
+"scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "postbuild": "cp -r studio/dist ./out/raizzify/studio",
+  "preview": "serve -s out -l 3000",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d out"
+},
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@portabletext/react": "^3.2.1",
