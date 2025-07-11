@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "postbuild": "cp -r studio/dist ./out/raizzify/studio",
+    "preview": "serve -s out -l 3000",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out"
   },
