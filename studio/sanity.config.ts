@@ -16,7 +16,6 @@ export default defineConfig({
     types: schemaTypes,
   },
 
-  basePath: '/raizzify/studio',
   
   vite: {
     base: '/raizzify/studio/',
