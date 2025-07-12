@@ -17,4 +17,8 @@ export default defineConfig({
   },
 
   basePath: '/raizzify/studio',
+  
+  vite: {
+    base: '/raizzify/studio/',
+  },
 })
