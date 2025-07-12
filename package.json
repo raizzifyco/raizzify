@@ -3,13 +3,13 @@
   "homepage": "http://raizz-product.github.io/raizzify",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "postbuild": "cd studio && npm install && npx sanity build --no-autoupdate && cd ../ && mkdir -p out/studio && cp -r studio/dist/* out/studio",
-    "preview": "serve -s out -l 3000",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "postbuild": "cd studio && npm install && npx sanity build --no-autoupdate && cd ../ && mkdir -p out/raizzify/studio && cp -r studio/dist/* out/raizzify/studio",
+  "preview": "serve -s out -l 3000",
+  "predeploy": "npm run build && npm run postbuild",
+  "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
