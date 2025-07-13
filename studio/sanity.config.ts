@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'Raizzify Studio',
+  title: 'Studio',
 
   projectId: 'zcvzshrn',
   dataset: 'production',
@@ -18,6 +18,6 @@ export default defineConfig({
 
   
   vite: {
-    base: '/raizzify/studio/',
+    base: '/studio/',
   },
 })
