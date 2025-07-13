@@ -1,6 +1,7 @@
-// app/blog/page.tsx or app/(blog)/page.tsx
 import Link from "next/link";
-import { client } from "@/lib/sanity"; // ✅ Make sure this is properly set up
+import { client } from "@/lib/sanity";
+
+export const dynamic = 'force-dynamic';
 
 interface BlogPost {
   _id: string;
@@ -14,10 +15,7 @@ interface BlogPost {
   };
 }
 
-export const revalidate = 60; // ✅ Optional: ISR for 60 seconds (if using Next.js App Router)
-
 export default async function BlogPage() {
-  // ✅ GROQ Query: Fetch all blog posts with required fields
   const query = `
     *[
       _type == "post" &&

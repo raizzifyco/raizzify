@@ -1,6 +1,8 @@
 import { client, urlFor } from "@/lib/sanity";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 
+export const dynamic = 'force-dynamic';
+
 interface BlogPost {
   _id: string;
   title: string;
