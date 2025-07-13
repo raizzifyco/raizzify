@@ -5,7 +5,7 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'raizzify-cms',
+  title: 'Raizzify Studio',
 
   projectId: 'zcvzshrn',
   dataset: 'production',
