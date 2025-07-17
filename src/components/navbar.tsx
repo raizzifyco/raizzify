@@ -177,6 +177,14 @@ const Navbar = () => {
                         Testimonials
                       </p>
                       <Separator />
+                      <Link
+                        href="/blog"
+                        onClick={() => handleClose("blog")}
+                        className="text-secondaryTextColor hover:text-primary transition-colors"
+                      >
+                        Blog
+                      </Link>
+                      <Separator />
                       <p
                         onClick={() => handleClose("faqs")}
                         className="cursor-pointer text-secondaryTextColor hover:text-primary"

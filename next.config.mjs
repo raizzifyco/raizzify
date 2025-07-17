@@ -2,7 +2,7 @@
 const nextConfig = {
      trailingSlash: true,
      basePath: '/raizzify',
-     output: 'export',
+     // output: 'export',
      images: { unoptimized: true }
 };
 
