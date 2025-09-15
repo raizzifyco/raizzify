@@ -1,76 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Playstore from "../../../public/playstore.svg";
 import Appstore from "../../../public/appstore.svg";
 
 const DownloadPage: React.FC = () => {
-  const [redirecting, setRedirecting] = useState(true);
-
-  useEffect(() => {
-    const userAgent =
-      navigator.userAgent || navigator.vendor || (window as any).opera;
-
-    // Detect Android
-    if (/android/i.test(userAgent)) {
-      window.location.href =
-        "https://play.google.com/store/apps/details?id=com.raizzify.hercules";
-      return;
-    }
-    // Detect iOS
-    if (/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream) {
-      window.location.href =
-        "https://apps.apple.com/in/app/raizzify/id6636553867";
-      return;
-    }
-
-    // Not mobile → show fallback page
-    setRedirecting(false);
-  }, []);
-
-  if (redirecting) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          flexDirection: "column",
-          background: "linear-gradient(135deg, #f5f7fa, #c3cfe2)",
-          fontFamily: "sans-serif",
-        }}
-      >
-        {/* Spinner */}
-        <div
-          style={{
-            width: "50px",
-            height: "50px",
-            border: "6px solid #ddd",
-            borderTop: "6px solid #0070f3",
-            borderRadius: "50%",
-            animation: "spin 1s linear infinite",
-            marginBottom: "20px",
-          }}
-        />
-        <p style={{ fontSize: "1.2rem", color: "#444" }}>
-          Redirecting you to the store...
-        </p>
-
-        {/* Spinner animation keyframes */}
-        <style>
-          {`
-            @keyframes spin {
-              from { transform: rotate(0deg); }
-              to { transform: rotate(360deg); }
-            }
-          `}
-        </style>
-      </div>
-    );
-  }
-
   return (
     <div
       style={{
@@ -89,8 +23,7 @@ const DownloadPage: React.FC = () => {
         Download Raizzify
       </h1>
       <p style={{ marginBottom: "2rem", color: "#555", maxWidth: "400px" }}>
-        We couldn’t detect your device automatically. Please choose your
-        platform below:
+        Choose your platform below to get started:
       </p>
 
       <div className="download-buttons">
@@ -99,6 +32,7 @@ const DownloadPage: React.FC = () => {
           href="https://play.google.com/store/apps/details?id=com.raizzify.hercules"
           target="_blank"
           rel="noopener noreferrer"
+          className="store-link"
         >
           <Image
             src={Playstore}
@@ -118,6 +52,7 @@ const DownloadPage: React.FC = () => {
           href="https://apps.apple.com/in/app/raizzify/id6636553867"
           target="_blank"
           rel="noopener noreferrer"
+          className="store-link"
         >
           <Image
             src={Appstore}
@@ -133,7 +68,7 @@ const DownloadPage: React.FC = () => {
         </a>
       </div>
 
-      {/* Responsive styles */}
+      {/* Styles */}
       <style>
         {`
           .download-buttons {
@@ -149,6 +84,15 @@ const DownloadPage: React.FC = () => {
               align-items: center;
               gap: 16px;
             }
+          }
+
+          .store-link {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+          }
+
+          .store-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
           }
         `}
       </style>
